@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSliderTable extends Migration
+class CreateGalleryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,16 @@ class CreateSliderTable extends Migration
      */
     public function up()
     {
-        Schema::create('slider', function (Blueprint $table) {
+        Schema::create('gallery', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned()->nullable();
-            $table->string('url_slider', 255)->nullable();
-            $table->string('keterangan_slider', 225)->nullable();
-            $table->integer('flag_slider')->nullable();
+            $table->string('url_gambar', 255)->nullable();
+            $table->string('keterangan_gambar', 225)->nullable();
+            $table->integer('flag_gambar')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('slider', function(Blueprint $table){
+        Schema::table('gallery', function(Blueprint $table){
             $table->foreign('id_user')->references('id')->on('users');
         });
     }
@@ -33,6 +33,8 @@ class CreateSliderTable extends Migration
      */
     public function down()
     {
-        // Schema::drop('slider');
+        Schema::table('gallery', function (Blueprint $table) {
+            //
+        });
     }
 }

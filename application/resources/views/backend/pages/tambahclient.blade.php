@@ -93,36 +93,6 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Nama Project</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" name="nama_project"
-                    @if(isset($editclient))
-                      value="{{$editclient->nama_project}}"
-                    @endif
-                  >
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Status Project</label>
-                <div class="col-sm-5">
-                  <select class="form-control" name="status_project">
-                    <option>-- Pilih --</option>
-                    @if(isset($editclient))
-                        @if($editclient->status_project=='Done')
-                          <option value="Done" selected="true">Done</option>
-                          <option value="Progress">Progress</option>
-                        @else
-                          <option value="Done">Done</option>
-                          <option value="Progress" selected="true">Progress</option>
-                        @endif
-                    @else
-                      <option value="Done">Done</option>
-                      <option value="Progress">Progress</option>
-                    @endif
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
                 <label class="col-sm-2 control-label">Foto Client</label>
                 <div class="col-sm-3">
                   <input type="file" class="form-control" name="url_client">

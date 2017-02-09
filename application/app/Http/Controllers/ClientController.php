@@ -64,8 +64,6 @@ class ClientController extends Controller
           $set->tags = $request->tags;
           $set->link_client = $request->link_client;
           $set->flag_client = 0;
-          $set->nama_project = $request->nama_project;
-          $set->status_project = $request->status_project;
           $set->save();
     } else if ($urlClient!=null) {
       $photo_name_url = time(). '.' . $urlClient->getClientOriginalExtension();
@@ -88,8 +86,6 @@ class ClientController extends Controller
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
         $set->flag_client = 0;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     } else if ($logoClient!=null) {
       $photo_name_logo = time(). '.' . $logoClient->getClientOriginalExtension();
@@ -112,8 +108,6 @@ class ClientController extends Controller
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
         $set->flag_client = 0;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     } else {
         $set = new Client;
@@ -123,8 +117,6 @@ class ClientController extends Controller
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
         $set->flag_client = 0;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     }
 
@@ -179,8 +171,6 @@ class ClientController extends Controller
         $set->logo_client = $photo_name_logo;
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     } else if ($urlClient!=null) {
       $photo_name_url = time(). '.' . $urlClient->getClientOriginalExtension();
@@ -204,8 +194,6 @@ class ClientController extends Controller
         $set->url_client = $photo_name_url;
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     } else if ($logoClient!=null) {
       $photo_name_logo = time(). '.' . $logoClient->getClientOriginalExtension();
@@ -229,8 +217,6 @@ class ClientController extends Controller
         $set->logo_client = $photo_name_logo;
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     } else {
         $set = Client::find($request->id);
@@ -239,8 +225,6 @@ class ClientController extends Controller
         $set->keterangan_client = $request->keterangan_client;
         $set->tags = $request->tags;
         $set->link_client = $request->link_client;
-        $set->nama_project = $request->nama_project;
-        $set->status_project = $request->status_project;
         $set->save();
     }
 

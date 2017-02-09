@@ -26,6 +26,7 @@
       <!-- Profile Image -->
       <div class="box box-danger">
         <div class="box-body box-profile">
+          <p class="text-muted text-center bg-green">{{$getuser->master_jabatan->nama_jabatan}}</p>
           @if($getuser->url_foto=="")
             <img class="profile-user-img img-responsive img-circle" src="{{ asset('/images/userdefault.png') }}" alt="User profile picture">
           @else
