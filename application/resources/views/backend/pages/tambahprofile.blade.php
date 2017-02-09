@@ -101,6 +101,9 @@
                     @endif
                   @endif
                 </select>
+                  @if($getkategori->isEmpty())
+                    <span style="color:red;">* Anda belum memiliki kategori</span>
+                  @endif
               </div>
             </div>
             <div class="form-group">

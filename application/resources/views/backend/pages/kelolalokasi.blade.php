@@ -8,12 +8,12 @@
 
 @section('breadcrumb')
   <h1>
-    Skill
-    <small>Kelola Skill</small>
+    Lokasi
+    <small>Kelola Lokasi</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Kelola Skill</li>
+    <li class="active">Kelola Lokasi</li>
   </ol>
 @stop
 
@@ -37,10 +37,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Status Skill</h4>
+          <h4 class="modal-title">Edit Status Lokasi</h4>
         </div>
         <div class="modal-body">
-          <p>Apakah anda yakin untuk mengubah status skill ini?</p>
+          <p>Apakah anda yakin untuk mengubah status lokasi ini?</p>
         </div>
         <div class="modal-footer">
           <button type="reset" class="btn btn-default pull-left btn-flat" data-dismiss="modal">Tidak</button>
@@ -55,10 +55,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Hapus Skill</h4>
+          <h4 class="modal-title">Hapus Lokasi</h4>
         </div>
         <div class="modal-body">
-          <p>Apakah anda yakin untuk menghapus skill ini?</p>
+          <p>Apakah anda yakin untuk menghapus lokasi ini?</p>
         </div>
         <div class="modal-footer">
           <button type="reset" class="btn btn-default pull-left btn-flat" data-dismiss="modal">Tidak</button>
@@ -70,30 +70,26 @@
 
   <div class="modal fade" id="modaledit" role="dialog">
     <div class="modal-dialog">
-      <form class="form-horizontal" action="{{route('skill.edit')}}" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="{{route('lokasi.edit')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Edit Konten Skill</h4>
+            <h4 class="modal-title">Edit Konten Lokasi</h4>
           </div>
           <div class="modal-body">
             <div class="col-md-14">
-              <label class="control-label">Nama Skill</label>
-              <input type="text" name="nama_skill" class="form-control" id="edit_nama_skill">
-            </div>
-            <div class="col-md-14">
-              <label class="control-label">Keterangan</label>
-              <textarea name="keterangan_skill" rows="4" cols="40" class="form-control" id="edit_keterangan_skill"></textarea>
-            </div>
-            <div class="col-md-14">
-              <label class="control-label">Persentase</label>
-              <input type="text" name="persentase" class="form-control" id="edit_persentase" maxlength="3">
+              <label class="control-label">Nama Lokasi</label>
+              <input type="text" name="nama_lokasi" class="form-control" id="edit_nama_lokasi">
               <input type="hidden" name="id" id="id">
             </div>
             <div class="col-md-14">
+              <label class="control-label">Keterangan</label>
+              <textarea name="keterangan_lokasi" rows="4" cols="40" class="form-control" id="edit_keterangan_lokasi"></textarea>
+            </div>
+            <div class="col-md-14">
               <label class="control-label">Status</label>
-              <select class="form-control" name="flag_skill">
+              <select class="form-control" name="flag_lokasi">
                 <option value="1" id="flag_aktif">Aktif</option>
                 <option value="0" id="flag_nonaktif">Tidak Aktif</option>
               </select>
@@ -127,20 +123,20 @@
       @endif
     </div>
     <div class="col-md-4">
-      <form class="form-horizontal" action="{{route('skill.store')}}" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" action="{{route('lokasi.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="box box-success">
           <div class="box-header with-border">
-            <h3 class="box-title">Formulir Tambah Skill Baru</h3>
+            <h3 class="box-title">Formulir Tambah Lokasi Baru</h3>
           </div>
           <div class="box-body">
             <div class="col-md-14">
-              <label class="control-label">Nama Skill</label>
-              <input type="text" name="nama_skill" class="form-control">
+              <label class="control-label">Nama Lokasi</label>
+              <input type="text" name="nama_lokasi" class="form-control">
             </div>
             <div class="col-md-14">
               <label class="control-label">Keterangan</label>
-              <textarea name="keterangan_skill" rows="4" cols="40" class="form-control"></textarea>
+              <textarea name="keterangan_lokasi" rows="4" cols="40" class="form-control"></textarea>
             </div>
             <div class="col-md-14">
               <label class="control-label">Persentase</label>
@@ -148,7 +144,7 @@
             </div>
             <div class="col-md-14">
               <label class="control-label">Status</label>
-              <select class="form-control" name="flag_skill">
+              <select class="form-control" name="flag_lokasi">
                 <option value="1">Aktif</option>
                 <option value="0">Tidak Aktif</option>
               </select>
@@ -173,20 +169,20 @@
               <tr>
                 <th>#</th>
                 <th>Nama</th>
-                <th>Persentase</th>
+                <th>Keterangan</th>
                 <th>Status</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               <?php $i=1; ?>
-              @foreach($getskill as $key)
+              @foreach($getlokasi as $key)
                 <tr>
                   <td>{{$i}}</td>
-                  <td>{{$key->nama_keahlian}}</td>
-                  <td>{{$key->persentase}}</td>
+                  <td>{{$key->nama_lokasi}}</td>
+                  <td>{{$key->keterangan_lokasi}}</td>
                   <td>
-                    @if($key->flag_keahlian=="1")
+                    @if($key->flag_lokasi=="1")
                       <span class="badge bg-blue" data-toggle="tooltip" title="Aktif">
                         <i class="fa fa-thumbs-up"></i>
                       </span>
@@ -197,7 +193,7 @@
                     @endif
                   </td>
                   <td>
-                    @if($key->flag_keahlian=="1")
+                    @if($key->flag_lokasi=="1")
                       <span data-toggle="tooltip" title="Ubah Status">
                         <a href="#" class="btn btn-xs btn-danger btn-flat flagpublish" data-toggle="modal" data-target="#modalflagedit" data-value="{{$key->id}}"><i class="fa fa-heartbeat"></i></a>
                       </span>
@@ -245,74 +241,35 @@
 
       $("#tabelinfo").on("click", "a.flagpublish", function(){
         var a = $(this).data('value');
-        $('#setflagpublish').attr('href', '{{url('admin/publish-skill/')}}/'+a);
+        $('#setflagpublish').attr('href', '{{url('admin/publish-lokasi/')}}/'+a);
       });
 
       $("#tabelinfo").on("click", "a.hapus", function(){
         var a = $(this).data('value');
-        $('#sethapus').attr('href', '{{url('admin/delete-skill/')}}/'+a);
+        $('#sethapus').attr('href', '{{url('admin/delete-lokasi/')}}/'+a);
       });
 
       $("#tabelinfo").on("click", "a.edit", function(){
         var a = $(this).data('value');
         $.ajax({
-          url: "{{url('/')}}/admin/bind-skill/"+a,
+          url: "{{url('/')}}/admin/bind-lokasi/"+a,
           dataType: 'json',
           success: function(data){
             var id = data.id;
-            var nama_skill = data.nama_keahlian;
-            var keterangan_skill = data.keterangan_keahlian;
-            var persentase = data.persentase;
-            var flag_skill = data.flag_keahlian;
+            var nama_lokasi = data.nama_lokasi;
+            var keterangan_lokasi = data.keterangan_lokasi;
+            var flag_lokasi = data.flag_lokasi;
 
             $('#id').attr('value', id);
-            $('#edit_nama_skill').val(nama_skill);
-            $('#edit_keterangan_skill').val(keterangan_skill);
-            $('#edit_persentase').val(persentase);
-            if(flag_skill=="1") {
+            $('#edit_nama_lokasi').val(nama_lokasi);
+            $('#edit_keterangan_lokasi').val(keterangan_lokasi);
+            if(flag_lokasi=="1") {
               $('#flag_aktif').attr('selected', true);
             } else {
               $('#flag_nonaktif').attr('selected', true);
             }
           }
         })
-      });
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#persentase").keydown(function (e) {
-          // Allow: backspace, delete, tab, escape, enter and .
-          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-               // Allow: Ctrl+A, Command+A
-              (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
-               // Allow: home, end, left, right, down, up
-              (e.keyCode >= 35 && e.keyCode <= 40)) {
-                   // let it happen, don't do anything
-                   return;
-          }
-          // Ensure that it is a number and stop the keypress
-          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-              e.preventDefault();
-          }
-      });
-    });
-
-    $(document).ready(function() {
-      $("#edit_persentase").keydown(function (e) {
-          // Allow: backspace, delete, tab, escape, enter and .
-          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-               // Allow: Ctrl+A, Command+A
-              (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
-               // Allow: home, end, left, right, down, up
-              (e.keyCode >= 35 && e.keyCode <= 40)) {
-                   // let it happen, don't do anything
-                   return;
-          }
-          // Ensure that it is a number and stop the keypress
-          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-              e.preventDefault();
-          }
       });
     });
   </script>

@@ -133,6 +133,9 @@
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="treeview-menu">
+        <li><a href="{{url('admin/lihat-project')}}"><i class="fa fa-circle-o"></i> Project</a></li>
+      </ul>
+      <ul class="treeview-menu">
         <li><a href="{{url('admin/kelola-kategori-project')}}"><i class="fa fa-circle-o"></i> Kategori Project</a></li>
       </ul>
       <ul class="treeview-menu">

@@ -201,6 +201,18 @@ Route::get('admin/bind-kategori-project/{id}', 'KategoriProjectController@bind')
 
 
 // =======================================================================================================================
+//Project
+Route::get('admin/lihat-project', 'ProjectController@lihat')->name('project.lihat');
+Route::get('admin/tambah-project', 'ProjectController@tambah')->name('project.tambah');
+Route::post('admin/store-project', 'ProjectController@store')->name('project.store');
+Route::get('admin/edit-project/{id}', 'ProjectController@edit')->name('project.edit');
+Route::post('admin/update-project', 'ProjectController@update')->name('project.update');
+Route::get('admin/publish-project/{id}', 'ProjectController@flagpublish')->name('project.flagpublish');
+Route::get('admin/delete-project/{id}', 'ProjectController@delete')->name('project.delete');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
 //Slider
 Route::get('admin/kelola-slider', 'SliderController@index')->name('slider.index');
 Route::post('admin/store-slider', 'SliderController@store')->name('slider.store');
