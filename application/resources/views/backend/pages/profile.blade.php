@@ -55,6 +55,7 @@
       <!-- Profile Image -->
       <div class="box box-success">
         <div class="box-body box-profile">
+          <p class="text-muted text-center bg-green">{{$getuser->master_jabatan->nama_jabatan}}</p>
           @if($getuser->url_foto=="")
             <img class="profile-user-img img-responsive img-circle" src="{{ asset('/images/userdefault.png') }}" alt="User profile picture">
           @else
@@ -71,7 +72,6 @@
           @else
             <p class="text-muted text-center">Guest</p>
           @endif
-
           <ul class="list-group list-group-unbordered"><!-- 
             <li class="list-group-item">
               <i class="ion ion-speakerphone"></i><b>  Jumlah Berita</b> <a class="badge bg-green pull-right">{{$countberita}}</a>
