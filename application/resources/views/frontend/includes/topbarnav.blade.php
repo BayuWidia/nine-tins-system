@@ -1,19 +1,4 @@
-    <header id="header">      
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                   <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div> 
-                </div>
-             </div>
-        </div>
+    <header id="header">  
         <div class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -24,8 +9,8 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="index.html">
-                        <h1><img src="{{ asset('theme/images/logo.png')}}" alt="logo"></h1>
+                    <a class="navbar-brand" href="#" style="padding-left: 20%; margin-top: -4%">
+                        <img src="{{ asset('theme/images/logo2.png')}}" alt="logo">
                     </a>
                     
                 </div>
@@ -43,14 +28,6 @@
                         </li>
                          <li><a href="{{route('foto.front.index')}}">Foto</a></li>                 
                     </ul>
-                </div>
-                <div class="search">
-                    <form role="form">
-                        <i class="fa fa-search"></i>
-                        <div class="field-toggle">
-                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
