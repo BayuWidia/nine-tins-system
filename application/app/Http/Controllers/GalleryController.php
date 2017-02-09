@@ -26,11 +26,13 @@ class GalleryController extends Controller
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
 
         $photo1 = explode('.', $photo_name);
-        // $photo40 = $photo1[0]."_40x40.".$photo1[1];
+        $photo66 = $photo1[0]."_66x66.".$photo1[1];
+        $photo480 = $photo1[0]."_480x270.".$photo1[1];
         $photo200 = $photo1[0]."_200x122.".$photo1[1];
 
         Image::make($file)->fit(810,426)->save('images/'. $photo_name);
-        // Image::make($file)->fit(40,40)->save('images/'. $photo40);
+        Image::make($file)->fit(66,66)->save('images/'. $photo66);
+        Image::make($file)->fit(480,270)->save('images/'. $photo480);
         Image::make($file)->fit(200,122)->save('images/'. $photo200);
 
         $set = new Gallery;
@@ -77,11 +79,13 @@ class GalleryController extends Controller
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
 
       $photo1 = explode('.', $photo_name);
-      // $photo40 = $photo1[0]."_40x40.".$photo1[1];
+      $photo66 = $photo1[0]."_66x66.".$photo1[1];
+      $photo480 = $photo1[0]."_480x270.".$photo1[1];
       $photo200 = $photo1[0]."_200x122.".$photo1[1];
 
       Image::make($file)->fit(810,426)->save('images/'. $photo_name);
-      // Image::make($file)->fit(40,40)->save('images/'. $photo40);
+      Image::make($file)->fit(66,66)->save('images/'. $photo66);
+      Image::make($file)->fit(480,270)->save('images/'. $photo480);
       Image::make($file)->fit(200,122)->save('images/'. $photo200);
 
       $set = Gallery::find($request->id);

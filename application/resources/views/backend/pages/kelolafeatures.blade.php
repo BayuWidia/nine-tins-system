@@ -146,7 +146,6 @@
             <div class="col-md-14">
               <label class="control-label">Gambar Features</label>
               <input type="file" name="url_features" class="form-control">
-              <span style="color:red;">* Ukuran Slider 866px X 490px.</span>
             </div>
             <div class="col-md-14">
               <label class="control-label">Status</label>

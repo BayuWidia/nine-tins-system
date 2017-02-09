@@ -53,26 +53,12 @@ class BeritaPengetahuanController extends Controller
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
 
       $photo1 = explode('.', $photo_name);
-      // $photo250 = $photo1[0]."_250x150.".$photo1[1];
-      // $photo570 = $photo1[0]."_570x291.".$photo1[1];
-      // $photo395 = $photo1[0]."_395x237.".$photo1[1];
-      // $photo100 = $photo1[0]."_100x70.".$photo1[1];
-      // $photo80 = $photo1[0]."_80x80.".$photo1[1];
-      // $photo810_426 = $photo1[0]."_810x426.".$photo1[1];
-      // // $photo490 = $photo1[0]."_490x474.".$photo1[1];
-      // $photo810_475 = $photo1[0]."_810x475.".$photo1[1];
-      // $photo256 = $photo1[0]."_256x173.".$photo1[1];
+      $photo850 = $photo1[0]."_850x400.".$photo1[1];
+      $photo52 = $photo1[0]."_52x52.".$photo1[1];
 
       Image::make($file)->fit(472,270)->save('images/'. $photo_name);
-      // Image::make($file)->fit(250,150)->save('images/'. $photo250);
-      // Image::make($file)->fit(570,291)->save('images/'. $photo570);
-      // Image::make($file)->fit(395,237)->save('images/'. $photo395);
-      // Image::make($file)->fit(100,70)->save('images/'. $photo100);
-      // Image::make($file)->fit(80,80)->save('images/'. $photo80);
-      // Image::make($file)->fit(810,426)->save('images/'. $photo810_426);
-      // // Image::make($file)->fit(490,474)->save('images/'. $photo490);
-      // Image::make($file)->fit(810,475)->save('images/'. $photo810_475);
-      // Image::make($file)->fit(256,173)->save('images/'. $photo256);
+      Image::make($file)->fit(850,400)->save('images/'. $photo850);
+      Image::make($file)->fit(52,52)->save('images/'. $photo52);
 
         $set = new Berita;
         $set->id_kategori = $request->id_kategori;
@@ -132,26 +118,12 @@ class BeritaPengetahuanController extends Controller
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
 
       $photo1 = explode('.', $photo_name);
-      // $photo250 = $photo1[0]."_250x150.".$photo1[1];
-      // $photo570 = $photo1[0]."_570x291.".$photo1[1];
-      // $photo395 = $photo1[0]."_395x237.".$photo1[1];
-      // $photo100 = $photo1[0]."_100x70.".$photo1[1];
-      // $photo80 = $photo1[0]."_80x80.".$photo1[1];
-      // $photo810_426 = $photo1[0]."_810x426.".$photo1[1];
-      // // $photo490 = $photo1[0]."_490x474.".$photo1[1];
-      // $photo810_475 = $photo1[0]."_810x475.".$photo1[1];
-      // $photo256 = $photo1[0]."_256x173.".$photo1[1];
+      $photo850 = $photo1[0]."_850x400.".$photo1[1];
+      $photo52 = $photo1[0]."_52x52.".$photo1[1];
 
       Image::make($file)->fit(472,270)->save('images/'. $photo_name);
-      // Image::make($file)->fit(250,150)->save('images/'. $photo250);
-      // Image::make($file)->fit(570,291)->save('images/'. $photo570);
-      // Image::make($file)->fit(395,237)->save('images/'. $photo395);
-      // Image::make($file)->fit(100,70)->save('images/'. $photo100);
-      // Image::make($file)->fit(80,80)->save('images/'. $photo80);
-      // Image::make($file)->fit(810,426)->save('images/'. $photo810_426);
-      // // Image::make($file)->fit(490,474)->save('images/'. $photo490);
-      // Image::make($file)->fit(810,475)->save('images/'. $photo810_475);
-      // Image::make($file)->fit(256,173)->save('images/'. $photo256);
+      Image::make($file)->fit(850,400)->save('images/'. $photo850);
+      Image::make($file)->fit(52,52)->save('images/'. $photo52);
 
         $set = Berita::find($request->id);
         $set->id_kategori = $request->id_kategori;

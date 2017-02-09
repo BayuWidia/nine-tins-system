@@ -29,12 +29,16 @@ class AkunController extends Controller
     $file = $request->file('url_foto');
     if ($file != null) {
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
+
+
       $photo1 = explode('.', $photo_name);
+      $photo480 = $photo1[0]."_480x495.".$photo1[1];
+
       Image::make($file)->fit(128,128)->save('images/'. $photo_name);
+      Image::make($file)->fit(480,495)->save('images/'. $photo480);
     } else {
       $photo_name = null;
     }
-    
 
     $set = new User;
     $set->name = $request->name;
@@ -42,6 +46,8 @@ class AkunController extends Controller
     $set->level = $request->level;
     $set->password = Hash::make($request->password);
     $set->url_foto = $photo_name;
+    $set->facebook = $request->facebook;
+    $set->twitter = $request->twitter;
     $set->activated = '1';
     $set->save();
 

@@ -1,61 +1,58 @@
-<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('/bootstrap/css/font-awesome.min.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>404 Error </title>
+    <link href="{{ asset ('theme/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset ('theme/css/font-awesome.min.css')}}" rel="stylesheet"> 
+    <link href="{{ asset ('theme/css/main.css')}}" rel="stylesheet">
+    <link href="{{ asset ('theme/css/responsive.css')}}" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ asset('/dist/css/AdminLTE.min.css') }}">
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset ('theme/images/ico/apple-touch-icon-144-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset ('theme/images/ico/apple-touch-icon-114-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset ('theme/images/ico/apple-touch-icon-72-precomposed.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset ('theme/images/ico/apple-touch-icon-57-precomposed.png')}}">
+</head><!--/head-->
 
-<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+<body>
+    <section id="error-page">
+        <div class="error-page-inner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <div class="bg-404">
+                                <div class="error-image">                                
+                                    <img class="img-responsive" src="{{ asset ('theme/images/404.png')}}" alt="">  
+                                </div>
+                            </div>
+                            <h3><i class="fa fa-warning text-yellow"></i> Maaf Terjadi Kesalahan</h3>
+                            <p>Halaman yang anda tuju tidak ditemukan kemungkinan sudah dihapus atau alamatnya sudah digantikan.</p>
+                            <a href="{{url('/')}}" class="btn btn-error">KEMBALI KE HOME</a>
+                            <div class="social-link">
+                                <span><a href="#"><i class="fa fa-facebook"></i></a></span>
+                                <span><a href="#"><i class="fa fa-twitter"></i></a></span>
+                                <span><a href="#"><i class="fa fa-google-plus"></i></a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
-       <style>
-           html, body {
-               height: 100%;
-           }
-
-           body {
-               margin: 0;
-               padding: 0;
-               width: 100%;
-               color: black;
-               display: table;
-               font-weight: 100;
-               font-family: 'Lato';
-           }
-
-           .container {
-               text-align: center;
-               display: table-cell;
-               vertical-align: middle;
-           }
-
-           .content {
-               text-align: center;
-               display: inline-block;
-           }
-
-           .title {
-               font-size: 45px;
-               color: black;
-           }
-
-
-       </style>
-     <div>
-       <div class="content">
-         <h1 class="headline text-yellow"> 404</h1>
-         <h3><i class="fa fa-warning text-yellow"></i> Maaf Terjadi Kesalahan</h3>
-
-         <h1 class="title">
-           Halaman yang anda tuju tidak ditemukan kemungkinan sudah dihapus atau alamatnya sudah digantikan.
-         </h1>
-
-         <form class="search-form">
-           <div class="input-group">
-             <div class="input-group-btn">
-                 <a class="btn btn-warning btn-flat" href="{{ URL::previous() }}"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;&nbsp; Kembali Ke Halaman Sebelumnya</a>
-             </div>
-           </div>
-           <!-- /.input-group -->
-         </form>
-       </div>
-       <!-- /.error-content -->
-     </div>
+    <script type="text/javascript" src="{{ asset ('theme/js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{ asset ('theme/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset ('theme/js/wow.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset ('theme/js/main.js')}}"></script>
+</body>
+</html>

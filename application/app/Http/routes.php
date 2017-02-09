@@ -11,7 +11,26 @@
 |
 */
 
-///////////////////////////////////////// BACKEND ROUTE /////////////////////////////////////////
+
+///////////////////////////////////////// START FRONTEND ROUTE /////////////////////////////////////////
+Route::get('/', ['as' => 'index', 'uses' => 'WelcomeFrontEndPageController@index']);
+Route::get('front/about', 'AboutFrontEndPageController@index')->name('about.front.index');
+Route::get('front/service', 'ServiceFrontEndPageController@index')->name('service.front.index');
+Route::get('front/portofolio', 'PortofolioFrontEndPageController@index')->name('portofolio.front.index');
+Route::get('front/portofolio-detail', 'DetailPortofolioFrontEndPageController@index')->name('detail.portofolio.front.index');
+Route::get('front/contact', 'ContactFrontEndPageController@index')->name('contact.front.index');
+Route::get('front/bagi-pengetahuan', 'BagiPengetahuanFrontEndPageController@index')->name('bagi.pengetahuan.front.index');
+Route::get('front/bagi-pengetahuan-detail', 'DetailBagiPengetahuanFrontEndPageController@index')->name('detail.bagi.pengetahuan.front.index');
+Route::get('front/foto', 'FotoFrontEndPageController@index')->name('foto.front.index');
+
+
+
+///////////////////////////////////////// END FRONTEND ROUTE /////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////// START BACKEND ROUTE /////////////////////////////////////////
 Route::get('/monitoring', function () {
   return view('backend/pages/login');
 })->name('login.pages');
@@ -94,6 +113,27 @@ Route::get('admin/publish-services/{id}', 'ServicesController@publish')->name('s
 Route::get('admin/bind-services/{id}', 'ServicesController@bind')->name('services.bind');
 // =======================================================================================================================
 
+// =======================================================================================================================
+//Testimonial
+Route::get('admin/kelola-testimonial', 'TestimonialController@index')->name('testimonial.index');
+Route::post('admin/store-testimonial', 'TestimonialController@store')->name('testimonial.store');
+Route::get('admin/delete-testimonial/{id}', 'TestimonialController@delete')->name('testimonial.delete');
+Route::post('admin/edit-testimonial', 'TestimonialController@edit')->name('testimonial.edit');
+Route::get('admin/publish-testimonial/{id}', 'TestimonialController@publish')->name('testimonial.publish');
+Route::get('admin/bind-testimonial/{id}', 'TestimonialController@bind')->name('testimonial.bind');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
+//Blockquote
+Route::get('admin/kelola-blockquote', 'BlockquoteController@index')->name('blockquote.index');
+Route::post('admin/store-blockquote', 'BlockquoteController@store')->name('blockquote.store');
+Route::get('admin/delete-blockquote/{id}', 'BlockquoteController@delete')->name('blockquote.delete');
+Route::post('admin/edit-blockquote', 'BlockquoteController@edit')->name('blockquote.edit');
+Route::get('admin/publish-blockquote/{id}', 'BlockquoteController@publish')->name('blockquote.publish');
+Route::get('admin/bind-blockquote/{id}', 'BlockquoteController@bind')->name('blockquote.bind');
+// =======================================================================================================================
+
 
 // =======================================================================================================================
 //Skill
@@ -171,5 +211,3 @@ Route::post('admin/change-password', 'UserProfileController@changePassword')->na
 
 ////////////////////////////////////// END OF BACKEND ROUTE //////////////////////////////////////
 
-
-///////////////////////////////////////// FRONTEND ROUTE /////////////////////////////////////////

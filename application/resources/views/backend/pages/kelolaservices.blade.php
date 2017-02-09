@@ -13,7 +13,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Kelola Features</li>
+    <li class="active">Kelola Services</li>
   </ol>
 @stop
 
@@ -87,7 +87,7 @@
               <textarea name="keterangan_services" rows="4" cols="40" class="form-control" id="edit_keterangan_services"></textarea>
             </div>
             <div class="col-md-14">
-              <label class="control-label">Gambar Features</label>
+              <label class="control-label">Gambar Services</label>
               <input type="file" name="url_services" class="form-control">
               <input type="hidden" name="id" id="id">
               <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
@@ -144,9 +144,8 @@
               <textarea name="keterangan_services" rows="4" cols="40" class="form-control"></textarea>
             </div>
             <div class="col-md-14">
-              <label class="control-label">Gambar Features</label>
+              <label class="control-label">Gambar Services</label>
               <input type="file" name="url_services" class="form-control">
-              <span style="color:red;">* Ukuran Slider 866px X 490px.</span>
             </div>
             <div class="col-md-14">
               <label class="control-label">Status</label>

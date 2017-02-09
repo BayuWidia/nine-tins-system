@@ -17,7 +17,7 @@
       
       
       <div class="col-md-12" style="margin-top:25%">
-          <div class="box box-danger box-solid">
+          <div class="box box-primary box-solid">
             <div class="box-header with-border">
               <h3 class="box-title">Login Monitoring</h3>
 

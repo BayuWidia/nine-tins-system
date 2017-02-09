@@ -111,7 +111,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label">Tags</label>
+                <label class="col-sm-2 control-label">Teknologi</label>
                 <div class="col-sm-4">
                   <input type="text" class="form-control" name="tags" data-role="tagsinput" id="tagsinput"
                     @if(isset($editclient))

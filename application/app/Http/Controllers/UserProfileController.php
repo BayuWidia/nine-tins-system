@@ -36,15 +36,24 @@ class UserProfileController extends Controller
     $file = $request->file('url_foto');
     if ($file!=null) {
       $photo = time(). '.' . $file->getClientOriginalExtension();
+
+      $photo1 = explode('.', $photo);
+      $photo480 = $photo1[0]."_480x495.".$photo1[1];
+
       Image::make($file)->fit(160,160)->save('images/'. $photo);
+      Image::make($file)->fit(480,495)->save('images/'. $photo480);
 
       $set = User::find($request->id);
       $set->name = $request->name;
       $set->url_foto = $photo;
+      $set->facebook = $request->facebook;
+      $set->twitter = $request->twitter;
       $set->save();
     } else {
       $set = User::find($request->id);
       $set->name = $request->name;
+      $set->facebook = $request->facebook;
+      $set->twitter = $request->twitter;
       $set->save();
     }
 

@@ -116,6 +116,26 @@
         <li><a href="{{url('admin/lihat-client')}}"><i class="fa fa-circle-o"></i> Kelola Client</a></li>
       </ul>
     </li>
+      <li class="treeview">
+      <a href="#" id="colortreemenulihref">
+        <i class="fa fa-commenting-o"></i>
+        <span>Manajemen Testimonial</span>
+        <i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-testimonial')}}"><i class="fa fa-circle-o"></i> Kelola Testimonial</a></li>
+      </ul>
+    </li>
+      <li class="treeview">
+      <a href="#" id="colortreemenulihref">
+        <i class="fa fa-graduation-cap"></i>
+        <span>Manajemen Blockquote</span>
+        <i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-blockquote')}}"><i class="fa fa-circle-o"></i> Kelola Blockquote</a></li>
+      </ul>
+    </li>
     <li class="treeview">
       <a href="#" id="colortreemenulihref">
         <i class="fa fa-users"></i>

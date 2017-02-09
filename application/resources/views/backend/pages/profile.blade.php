@@ -89,6 +89,16 @@
             {{$getuser->email}}
           </p>
           <hr>
+          <strong><i class="fa fa-facebook margin-r-5"></i>  Facebook</strong>
+          <p class="text-muted">
+            {{$getuser->facebook}}
+          </p>
+          <hr>
+          <strong><i class="fa fa-twitter margin-r-5"></i>  Twitter</strong>
+          <p class="text-muted">
+            {{$getuser->twitter}}
+          </p>
+          <hr>
           <strong><i class="fa fa-calendar margin-r-5"></i> Tanggal Terdaftar</strong>
           <p class="text-muted">{{ \Carbon\Carbon::parse($getuser->created_at)->format('d-M-y')}}</p>
           <hr>
@@ -154,6 +164,26 @@
                     <div class="col-sm-10">
                       <input type="file" name="url_foto" class="form-control">
                       <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Facebook</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="facebook"
+                        @if($getuser->facebook!="")
+                          value="{{$getuser->facebook}}"
+                        @endif
+                      >
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Twitter</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="twitter"
+                        @if($getuser->twitter!="")
+                          value="{{$getuser->twitter}}"
+                        @endif
+                      >
                     </div>
                   </div>
                   <div class="form-group">

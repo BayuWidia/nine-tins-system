@@ -191,7 +191,6 @@
               <div class="col-md-14 {{ $errors->has('url_foto') ? 'has-error' : '' }}">
                 <label class="control-label">Pilih Foto</label>
                 <input type="file" name="url_foto" accept=".jpg, .png, .bmp">
-                <font color="red"><small>*Ukuran Foto 128px X 128px</small></font>
                 @if($errors->has('url_foto'))
                   <span class="help-block">
                     <strong>{{ $errors->first('url_foto')}}
