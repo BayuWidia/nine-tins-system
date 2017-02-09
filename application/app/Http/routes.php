@@ -145,6 +145,18 @@ Route::get('admin/publish-skill/{id}', 'SkillController@publish')->name('skill.p
 Route::get('admin/bind-skill/{id}', 'SkillController@bind')->name('skill.bind');
 // =======================================================================================================================
 
+
+// =======================================================================================================================
+//Jabatan
+Route::get('admin/kelola-jabatan', 'JabatanController@index')->name('jabatan.index');
+Route::post('admin/store-jabatan', 'JabatanController@store')->name('jabatan.store');
+Route::get('admin/delete-jabatan/{id}', 'JabatanController@delete')->name('jabatan.delete');
+Route::post('admin/edit-jabatan', 'JabatanController@edit')->name('jabatan.edit');
+Route::get('admin/publish-jabatan/{id}', 'JabatanController@publish')->name('jabatan.publish');
+Route::get('admin/bind-jabatan/{id}', 'JabatanController@bind')->name('jabatan.bind');
+// =======================================================================================================================
+
+
 // =======================================================================================================================
 //About
 Route::get('admin/kelola-about', 'AboutController@index')->name('about.index');

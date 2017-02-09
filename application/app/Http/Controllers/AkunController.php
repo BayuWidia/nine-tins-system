@@ -9,6 +9,7 @@ use Hash;
 use Auth;
 use Image;
 use App\Models\User;
+use App\Models\Jabatan;
 use App\Models\Berita;
 use App\Models\Slider;
 use App\Http\Requests;
@@ -19,8 +20,9 @@ class AkunController extends Controller
   public function index()
   {
     $getuser = User::get();
+    $getjabatan = Jabatan::get();
     // dd($getuser);
-    return view('backend/pages/kelolaakun', compact('getuser'));
+    return view('backend/pages/kelolaakun', compact('getuser', 'getjabatan'));
   }
 
   public function store(Request $request)
@@ -42,12 +44,11 @@ class AkunController extends Controller
 
     $set = new User;
     $set->name = $request->name;
+    $set->id_jabatan = $request->id_jabatan;
     $set->email = $request->email;
     $set->level = $request->level;
     $set->password = Hash::make($request->password);
     $set->url_foto = $photo_name;
-    $set->facebook = $request->facebook;
-    $set->twitter = $request->twitter;
     $set->activated = '1';
     $set->save();
 

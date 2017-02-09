@@ -9,12 +9,12 @@ class User extends Authenticatable
 
     protected $table = 'users';
     protected $fillable = [
-        'name', 'email', 'password', 'level', 'url_foto', 'facebook', 'twitter', 'activated'
+        'name', 'id_jabatan', 'email', 'password', 'level', 'url_foto', 'facebook', 'twitter', 'activated'
     ];
 
 
-    public function slider()
+    public function master_jabatan()
     {
-      return $this->hasMany('App\Models\Slider');
+      return $this->belongsTo('App\Models\Jabatan', 'id_jabatan');
     }
 }

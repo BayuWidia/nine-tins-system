@@ -175,6 +175,21 @@
                   </span>
                 @endif
               </div>
+              <div class="col-md-14 {{ $errors->has('id_jabatan') ? 'has-error' : '' }}">
+                <label class="control-label">Jabatan</label>
+                <select class="form-control" name="id_jabatan" id="id_jabatan">
+                  <option value="-- Pilih --">-- Pilih --</option>
+                    @foreach($getjabatan as $key)
+                        <option value="{{$key->id}}">{{$key->nama_jabatan}}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('id_jabatan'))
+                  <span class="help-block">
+                    <i>* {{$errors->first('id_jabatan')}}</i>
+                  </span>
+                @endif
+              </div>
+
               <div class="col-md-14 {{ $errors->has('level') ? 'has-error' : '' }}">
                 <label class="control-label">Level</label>
                 <select class="form-control" name="level" id="leveluser">

@@ -68,6 +68,16 @@
     </li>
     <li class="treeview">
       <a href="#" id="colortreemenulihref">
+        <i class="fa fa-diamond"></i>
+        <span>Manajemen Jabatan</span>
+        <i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-jabatan')}}"><i class="fa fa-circle-o"></i> Kelola Jabatan</a></li>
+      </ul>
+    </li>
+    <li class="treeview">
+      <a href="#" id="colortreemenulihref">
         <i class="fa fa-star"></i>
         <span>Manajemen Features</span>
         <i class="fa fa-angle-left pull-right"></i>

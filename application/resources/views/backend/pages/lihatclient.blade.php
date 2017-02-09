@@ -101,6 +101,7 @@
                 <th>Keterangan Client</th>
                 <th>link Client</th>
                 <th>Status</th>
+                <th>Progress Project</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -121,6 +122,13 @@
                         <span class="badge bg-blue" data-toggle="tooltip" title="Client telah dipublikasi"><i class="fa fa-thumbs-up"></i></span>
                       @elseif($key->flag_client=="0")
                         <span class="badge bg-red" data-toggle="tooltip" title="Client belum dipublikasi"><i class="fa fa-thumbs-down"></i></span>
+                      @endif
+                  </td>
+                  <td>
+                     @if($key->status_project=='Done')
+                        <span class="badge bg-green">{{$key->status_project}}</span>
+                      @else
+                        <span class="badge bg-yellow">{{$key->status_project}}</span>
                       @endif
                   </td>
                   <td>
