@@ -9,6 +9,6 @@ class Gallery extends Model
   protected $table = 'gallery';
 
   protected $fillable = [
-    'url_gambar', 'keterangan_gambar', 'flag_gambar'
+    'id_user','url_gambar', 'keterangan_gambar', 'flag_gambar'
   ];
 }

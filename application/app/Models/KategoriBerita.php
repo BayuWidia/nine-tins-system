@@ -9,7 +9,7 @@ class KategoriBerita extends Model
   protected $table = 'kategori_berita';
 
   protected $fillable = [
-    'nama_kategori', 'keterangan_kategori', 'flag_kategori'
+    'id_user','nama_kategori', 'keterangan_kategori', 'flag_kategori'
   ];
 
   public function users()

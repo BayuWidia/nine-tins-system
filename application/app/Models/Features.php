@@ -9,7 +9,7 @@ class Features extends Model
   protected $table = 'fitur';
 
   protected $fillable = [
-    'nama_fitur', 'keterangan_fitur', 'url_fitur', 'flag_fitur'
+    'id_user','nama_fitur', 'keterangan_fitur', 'url_fitur', 'flag_fitur'
   ];
 
 }

@@ -126,7 +126,20 @@
         <li><a href="{{url('admin/lihat-client')}}"><i class="fa fa-circle-o"></i> Kelola Client</a></li>
       </ul>
     </li>
-      <li class="treeview">
+    <li class="treeview">
+      <a href="#" id="colortreemenulihref">
+        <i class="fa fa-briefcase"></i>
+        <span>Manajemen Project</span>
+        <i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-kategori-project')}}"><i class="fa fa-circle-o"></i> Kategori Project</a></li>
+      </ul>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-lokasi')}}"><i class="fa fa-circle-o"></i> Kelola Lokasi</a></li>
+      </ul>
+    </li>
+    <li class="treeview">
       <a href="#" id="colortreemenulihref">
         <i class="fa fa-commenting-o"></i>
         <span>Manajemen Testimonial</span>

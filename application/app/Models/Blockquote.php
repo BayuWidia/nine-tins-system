@@ -9,7 +9,7 @@ class Blockquote extends Model
   protected $table = 'blockquote';
 
   protected $fillable = [
-    'nama_blockquote', 'keterangan_blockquote', 'url_blockquote', 'flag_blockquote'
+    'id_user','nama_blockquote', 'keterangan_blockquote', 'url_blockquote', 'flag_blockquote'
   ];
 
 }

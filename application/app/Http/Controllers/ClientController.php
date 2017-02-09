@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Image;
 use App\Models\Client;
+use App\Models\Project;
 use App\Http\Requests;
 
 class ClientController extends Controller
@@ -247,10 +248,14 @@ class ClientController extends Controller
 
   public function delete($id)
   {
-    $set = Client::find($id);
-    $set->delete();
-
-    return redirect()->route('client.lihat')->with('message', 'Berhasil menghapus client.');
+    $check = Project::where('id_client', $id)->first();
+    if($check=="") {
+      $set = Client::find($id);
+      $set->delete();
+      return redirect()->route('client.lihat')->with('message', 'Berhasil menghapus client.');
+    } else {
+      return redirect()->route('client.lihat')->with('messagefail', 'Gagal melakukan hapus data. Data telah memiliki relasi dengan data yang lain.');
+    }
   }
 
 }

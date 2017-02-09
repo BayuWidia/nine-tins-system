@@ -9,7 +9,7 @@ class Slider extends Model
   protected $table = 'slider';
 
   protected $fillable = [
-    'url_slider', 'keterangan_slider', 'flag_slider'
+    'id_user','url_slider', 'keterangan_slider', 'flag_slider'
   ];
 
 }

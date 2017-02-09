@@ -9,7 +9,7 @@ class Testimonial extends Model
   protected $table = 'testimonial';
 
   protected $fillable = [
-    'nama_testimonial', 'keterangan_testimonial', 'url_testimonial', 'flag_testimonial'
+   'id_user','nama_testimonial', 'keterangan_testimonial', 'url_testimonial', 'flag_testimonial'
   ];
 
 }

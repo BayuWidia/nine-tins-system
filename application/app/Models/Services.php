@@ -9,7 +9,7 @@ class Services extends Model
   protected $table = 'service';
 
   protected $fillable = [
-    'nama_service', 'keterangan_service', 'url_service', 'flag_service'
+    'id_user','nama_service', 'keterangan_service', 'url_service', 'flag_service'
   ];
 
 }

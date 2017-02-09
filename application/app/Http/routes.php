@@ -23,8 +23,6 @@ Route::get('front/bagi-pengetahuan', 'BagiPengetahuanFrontEndPageController@inde
 Route::get('front/bagi-pengetahuan-detail', 'DetailBagiPengetahuanFrontEndPageController@index')->name('detail.bagi.pengetahuan.front.index');
 Route::get('front/foto', 'FotoFrontEndPageController@index')->name('foto.front.index');
 
-
-
 ///////////////////////////////////////// END FRONTEND ROUTE /////////////////////////////////////////
 
 
@@ -177,6 +175,28 @@ Route::get('admin/edit-client/{id}', 'ClientController@edit')->name('client.edit
 Route::post('admin/update-client', 'ClientController@update')->name('client.update');
 Route::get('admin/publish-client/{id}', 'ClientController@flagpublish')->name('client.flagpublish');
 Route::get('admin/delete-client/{id}', 'ClientController@delete')->name('client.delete');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
+//Lokasi
+Route::get('admin/kelola-lokasi', 'LokasiController@index')->name('lokasi.index');
+Route::post('admin/store-lokasi', 'LokasiController@store')->name('lokasi.store');
+Route::get('admin/delete-lokasi/{id}', 'LokasiController@delete')->name('lokasi.delete');
+Route::post('admin/edit-lokasi', 'LokasiController@edit')->name('lokasi.edit');
+Route::get('admin/publish-lokasi/{id}', 'LokasiController@publish')->name('lokasi.publish');
+Route::get('admin/bind-lokasi/{id}', 'LokasiController@bind')->name('lokasi.bind');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
+//Kategori Project
+Route::get('admin/kelola-kategori-project', 'KategoriProjectController@index')->name('project.kategori.index');
+Route::post('admin/store-kategori-project', 'KategoriProjectController@store')->name('project.kategori.store');
+Route::get('admin/delete-kategori-project/{id}', 'KategoriProjectController@delete')->name('project.kategori.delete');
+Route::post('admin/edit-kategori-project', 'KategoriProjectController@edit')->name('project.kategori.edit');
+Route::get('admin/publish-kategori-project/{id}', 'KategoriProjectController@publish')->name('project.kategori.publish');
+Route::get('admin/bind-kategori-project/{id}', 'KategoriProjectController@bind')->name('project.kategori.bind');
 // =======================================================================================================================
 
 
