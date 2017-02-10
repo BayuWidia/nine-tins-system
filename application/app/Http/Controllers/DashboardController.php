@@ -8,6 +8,8 @@ use Auth;
 use App\Models\User;
 use App\Http\Requests;
 use App\Models\Berita;
+use App\Models\Client;
+use App\Models\Project;
 use App\Models\KategoriBerita;
 use DB;
 
@@ -28,9 +30,9 @@ class DashboardController extends Controller
                         ->paginate(8);
 
       $countberita = Berita::all()->count();
-      $countkategori = KategoriBerita::all()->count();
+      $countproject = Project::all()->count();
       $countsudahterdaftar = User::where('activated', 1)->count();
-      $countpengaduanbelumpublish = Berita::where('flag_publish', 0)->count();
+      $countclient = Client::all()->count();
 
     } else {
       $beritaterbaru = DB::table('berita')
@@ -45,16 +47,16 @@ class DashboardController extends Controller
                         ->paginate(8);
 
       $countberita = Berita::where('id_user', Auth::user()->id)->count();
-      $countkategori = KategoriBerita::all()->count();
+      $countproject = Project::all()->count();
       $countsudahterdaftar = User::where('activated', 1)->count();
-      $countpengaduanbelumpublish = Berita::where('flag_publish', 0)->where('id_user', Auth::user()->id)->count();
+      $countclient = Client::all()->count();
       
     }
     return view('backend/pages/dashboard')
       ->with('countberita', $countberita)
-      ->with('countkategori', $countkategori)
+      ->with('countproject', $countproject)
       ->with('countsudahterdaftar', $countsudahterdaftar)
-      ->with('countpengaduanbelumpublish', $countpengaduanbelumpublish)
+      ->with('countclient', $countclient)
       ->with('beritaterbaru', $beritaterbaru)
       ->with('users', $users);
   }

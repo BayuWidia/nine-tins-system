@@ -20,6 +20,23 @@
   <div class="row">
     <div class="col-lg-3 col-md-3 col-xs-12">
       <!-- small box -->
+      <div class="small-box bg-primary">
+        <div class="inner">
+          <h3>
+            {{$countproject}}
+            <sup style="font-size: 20px"></sup></h3>
+          <p>Jumlah Project</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-briefcase"></i>
+        </div>
+        <a href="{{url('admin/lihat-project')}}"
+         class="small-box-footer">Lihat Data Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div><!-- ./col -->
+
+    <div class="col-lg-3 col-md-3 col-xs-12">
+      <!-- small box -->
       <div class="small-box bg-red">
         <div class="inner">
           <h3>
@@ -60,40 +77,19 @@
 
     <div class="col-lg-3 col-md-3 col-xs-12">
       <!-- small box -->
-      <div class="small-box bg-primary">
-        <div class="inner">
-          <h3>
-            {{$countpengaduanbelumpublish}}
-            <sup style="font-size: 20px"></sup></h3>
-          <p>Jumlah Berita</p>
-        </div>
-        <div class="icon">
-          <i class="fa fa-heartbeat"></i>
-        </div>
-        <a class="small-box-footer">
-          <i>
-            {{$countpengaduanbelumpublish}}
-            data yang belum dipublish</i>
-        </a>
-      </div>
-    </div><!-- ./col -->
-
-    <div class="col-lg-3 col-md-3 col-xs-12">
-      <!-- small box -->
       <div class="small-box bg-maroon">
         <div class="inner">
           <h3>
-            {{$countkategori}}
+            {{$countclient}}
             <sup style="font-size: 20px"></sup></h3>
-          <p>Jumlah Kategori</p>
+          <p>Jumlah Client</p>
         </div>
         <div class="icon">
-          <i class="fa fa-comments"></i>
+          <i class="fa fa-building-o"></i>
         </div>
         <a class="small-box-footer">
-          <i>
-            {{$countkategori}}
-            data kategori yang telah terbuat</i>
+          <a href="{{url('admin/lihat-client')}}"
+         class="small-box-footer">Lihat Data Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </a>
       </div>
     </div><!-- ./col -->
