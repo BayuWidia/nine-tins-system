@@ -10,9 +10,10 @@
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
-                        <h1>We Are Creative Nerds</h1>
-                        <p>Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.</p>
-                        <a href="#" class="btn btn-common">SIGN UP</a>
+                        <h1>We Are 9 Tins</h1>
+                        <h2>Technology Information and Solutions</h2>
+                        <p>9 tins founded in Jakarta in 2015. Originally, this IT consultants only carry out the work in the field of planning tools use raspberry ...</p>
+                        <a href="{{route('about.front.index')}}" class="btn btn-common">View More...</a>
                     </div>
                     <img src="{{ asset('theme/images/home/slider/hill.png')}}" class="slider-hill" alt="slider image">
                     <img src="{{ asset('theme/images/home/slider/house.png')}}" class="slider-house" alt="slider image">
