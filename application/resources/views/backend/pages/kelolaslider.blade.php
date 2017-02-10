@@ -12,7 +12,7 @@
     <small>Kelola Slider</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Kelola Slider</li>
   </ol>
 @stop

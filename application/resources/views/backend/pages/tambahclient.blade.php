@@ -16,7 +16,7 @@
     <small>Tambah Client</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Tambah Client</li>
   </ol>
 @stop
@@ -92,7 +92,7 @@
                     @endif</textarea>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" hidden="true">
                 <label class="col-sm-2 control-label">Foto Client</label>
                 <div class="col-sm-3">
                   <input type="file" class="form-control" name="url_client">

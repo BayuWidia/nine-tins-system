@@ -11,7 +11,7 @@
     <small>Kategori Informasi Profile</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Kategori Informasi Profile</li>
   </ol>
 @stop
@@ -171,9 +171,13 @@
                     <td>{{$key->keterangan_kategori}}</td>
                     <td>
                       @if($key->flag_kategori=="1")
-                        <span class="label bg-blue">Aktif</span>
+                        <span class="badge bg-blue" data-toggle="tooltip" title="Aktif">
+                          <i class="fa fa-thumbs-up"></i>
+                        </span>
                       @else
-                        <span class="label bg-red">Tidak Aktif</span>
+                        <span class="badge bg-red" data-toggle="tooltip" title="Tidak Aktif">
+                          <i class="fa fa-thumbs-down"></i>
+                        </span>
                       @endif
                     </td>
                     <td>

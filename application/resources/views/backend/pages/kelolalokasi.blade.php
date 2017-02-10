@@ -12,7 +12,7 @@
     <small>Kelola Lokasi</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Kelola Lokasi</li>
   </ol>
 @stop
@@ -137,10 +137,6 @@
             <div class="col-md-14">
               <label class="control-label">Keterangan</label>
               <textarea name="keterangan_lokasi" rows="4" cols="40" class="form-control"></textarea>
-            </div>
-            <div class="col-md-14">
-              <label class="control-label">Persentase</label>
-              <input type="text" name="persentase" class="form-control" id="persentase" maxlength="3">
             </div>
             <div class="col-md-14">
               <label class="control-label">Status</label>

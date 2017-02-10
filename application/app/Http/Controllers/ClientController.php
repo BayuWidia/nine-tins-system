@@ -46,15 +46,15 @@ class ClientController extends Controller
         $photo552_2 = $photo2[0]."_552x577.".$photo2[1];
         
         Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_url);
-        Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_logo);
+        Image::make($logoClient)->fit(472,270)->save('images/'. $photo_name_logo);
 
-        Image::make($file)->fit(130,50)->save('images/'. $photo130_1);
-        Image::make($file)->fit(261,269)->save('images/'. $photo261_1);
-        Image::make($file)->fit(552,577)->save('images/'. $photo552_1);
+        Image::make($urlClient)->fit(130,50)->save('images/'. $photo130_1);
+        Image::make($urlClient)->fit(261,269)->save('images/'. $photo261_1);
+        Image::make($urlClient)->fit(552,577)->save('images/'. $photo552_1);
 
-        Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-        Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-        Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+        Image::make($logoClient)->fit(130,50)->save('images/'. $photo130_2);
+        Image::make($logoClient)->fit(261,269)->save('images/'. $photo261_2);
+        Image::make($logoClient)->fit(552,577)->save('images/'. $photo552_2);
 
           $set = new Client;
           $set->id_user = Auth::user()->id;
@@ -75,9 +75,9 @@ class ClientController extends Controller
       $photo552_1 = $photo1[0]."_552x577.".$photo1[1];
       
       Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_url);
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_1);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_1);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_1);
+      Image::make($urlClient)->fit(130,50)->save('images/'. $photo130_1);
+      Image::make($urlClient)->fit(261,269)->save('images/'. $photo261_1);
+      Image::make($urlClient)->fit(552,577)->save('images/'. $photo552_1);
 
         $set = new Client;
         $set->id_user = Auth::user()->id;
@@ -96,10 +96,10 @@ class ClientController extends Controller
       $photo261_2 = $photo2[0]."_261x269.".$photo2[1];
       $photo552_2 = $photo2[0]."_552x577.".$photo2[1];
       
-      Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_logo);
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+      Image::make($logoClient)->fit(472,270)->save('images/'. $photo_name_logo);
+      Image::make($logoClient)->fit(130,50)->save('images/'. $photo130_2);
+      Image::make($logoClient)->fit(261,269)->save('images/'. $photo261_2);
+      Image::make($logoClient)->fit(552,577)->save('images/'. $photo552_2);
 
         $set = new Client;
         $set->id_user = Auth::user()->id;
@@ -154,15 +154,15 @@ class ClientController extends Controller
       $photo552_2 = $photo2[0]."_552x577.".$photo2[1];
       
       Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_url);
-      Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_logo);
+      Image::make($logoClient)->fit(472,270)->save('images/'. $photo_name_logo);
 
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_1);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_1);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_1);
+      Image::make($urlClient)->fit(130,50)->save('images/'. $photo130_1);
+      Image::make($urlClient)->fit(261,269)->save('images/'. $photo261_1);
+      Image::make($urlClient)->fit(552,577)->save('images/'. $photo552_1);
 
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+      Image::make($logoClient)->fit(130,50)->save('images/'. $photo130_2);
+      Image::make($logoClient)->fit(261,269)->save('images/'. $photo261_2);
+      Image::make($logoClient)->fit(552,577)->save('images/'. $photo552_2);
 
         $set = Client::find($request->id);
         $set->id_user = Auth::user()->id;
@@ -184,9 +184,9 @@ class ClientController extends Controller
       
       Image::make($urlClient)->fit(472,270)->save('images/'. $photo_name_url);
 
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_1);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_1);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_1);
+      Image::make($urlClient)->fit(130,50)->save('images/'. $photo130_1);
+      Image::make($urlClient)->fit(261,269)->save('images/'. $photo261_1);
+      Image::make($urlClient)->fit(552,577)->save('images/'. $photo552_1);
 
         $set = lient::find($request->id);
         $set->id_user = Auth::user()->id;
@@ -207,9 +207,9 @@ class ClientController extends Controller
       
       Image::make($logoClient)->fit(472,270)->save('images/'. $photo_name_logo);
 
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+      Image::make($logoClient)->fit(130,50)->save('images/'. $photo130_2);
+      Image::make($logoClient)->fit(261,269)->save('images/'. $photo261_2);
+      Image::make($logoClient)->fit(552,577)->save('images/'. $photo552_2);
 
         $set = Client::find($request->id);
         $set->id_user = Auth::user()->id;

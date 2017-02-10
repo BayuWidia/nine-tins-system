@@ -11,7 +11,7 @@
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
     <li class="active">Dashboard</li>
   </ol>
 @stop
@@ -45,7 +45,7 @@
           <p>Jumlah Berita</p>
         </div>
         <div class="icon">
-          <i class="ion ion-speakerphone"></i>
+          <i class="fa fa-microphone"></i>
         </div>
         <a class="small-box-footer">
           <i>

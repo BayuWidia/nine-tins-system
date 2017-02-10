@@ -13,8 +13,9 @@ class AboutController extends Controller
 {
   public function index()
   {
-    $getabout = About::get();
-    return view('backend/pages/kelolaabout')->with('getabout', $getabout);
+    $getabout = About::select('*')->first();
+    // dd($getabout);
+    return view('backend/pages/kelolaabout', compact('getabout'));
   }
 
   public function store(Request $request)
@@ -22,9 +23,9 @@ class AboutController extends Controller
     // dd($request);
     $set = new About;
     $set->id_user = Auth::user()->id;
-    $set->nama_tentang = $request->nama_about;
-    $set->keterangan_tentang = $request->keterangan_about;
-    $set->flag_tentang = $request->flag_about;
+    $set->nama_tentang = $request->nama_tentang;
+    $set->keterangan_tentang = $request->keterangan_tentang;
+    $set->flag_tentang = $request->flag_tentang;
     $set->save();
 
     return redirect()->route('about.index')->with('message', 'Berhasil memasukkan about baru.');
@@ -52,10 +53,10 @@ class AboutController extends Controller
 
   public function edit(Request $request)
   {
-      $set = Skill::find($request->id);
-      $set->nama_tentang = $request->nama_about;
-      $set->keterangan_tentang = $request->keterangan_about;
-      $set->flag_tentang = $request->flag_about;
+      $set = About::find($request->id);
+      $set->nama_tentang = $request->nama_tentang;
+      $set->keterangan_tentang = $request->keterangan_tentang;
+      $set->flag_tentang = $request->flag_tentang;
       $set->save();
 
     return redirect()->route('about.index')->with('message', 'Berhasil mengubah konten about.');

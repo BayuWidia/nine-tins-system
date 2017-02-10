@@ -12,7 +12,7 @@
                     <div class="slide-text">
                         <h1>We Are 9 Tins</h1>
                         <h2>Technology Information and Solutions</h2>
-                        <p>9 tins founded in Jakarta in 2015. Originally, this IT consultants only carry out the work in the field of planning tools use raspberry ...</p>
+                        <p><?php echo substr($getabout->keterangan_tentang, 0, 300) ?>...</p>
                         <a href="{{route('about.front.index')}}" class="btn btn-common">View More...</a>
                     </div>
                     <img src="{{ asset('theme/images/home/slider/hill.png')}}" class="slider-hill" alt="slider image">

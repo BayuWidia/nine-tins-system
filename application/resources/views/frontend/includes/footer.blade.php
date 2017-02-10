@@ -66,8 +66,8 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2016. All Rights Reserved.</p>
-                        <p>Crafted by <a target="_blank" href="http://designscrazed.org/">Allie</a></p>
+                        <p>&copy; 9 TINS Labs and Project 2017. All Rights Reserved.</p>
+                        <p>Crafted by <a target="_blank" href="http://9tins.com/">9 Tins</a></p>
                     </div>
                 </div>
             </div>

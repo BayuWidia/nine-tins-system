@@ -12,7 +12,7 @@
     <small>Kelola About</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li class="active">Kelola About</li>
   </ol>
 @stop
@@ -32,77 +32,6 @@
     }, 5000);
   </script>
 
-  <div class="modal fade" id="modalflagedit" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Edit Status About</h4>
-        </div>
-        <div class="modal-body">
-          <p>Apakah anda yakin untuk mengubah status about ini?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="reset" class="btn btn-default pull-left btn-flat" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-danger btn-flat" id="setflagpublish">Ya, saya yakin</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modaldelete" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Hapus About</h4>
-        </div>
-        <div class="modal-body">
-          <p>Apakah anda yakin untuk menghapus about ini?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="reset" class="btn btn-default pull-left btn-flat" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-danger btn-flat" id="sethapus">Ya, saya yakin</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modaledit" role="dialog">
-    <div class="modal-dialog">
-      <form class="form-horizontal" action="{{route('about.edit')}}" method="post" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Edit Konten About</h4>
-          </div>
-          <div class="modal-body">
-            <div class="col-md-14">
-              <label class="control-label">Nama About</label>
-              <input type="text" name="nama_about" class="form-control" id="edit_nama_about">
-            </div>
-            <div class="col-md-14">
-              <label class="control-label">Keterangan</label>
-              <textarea name="keterangan_about" rows="4" cols="40" class="form-control" id="edit_keterangan_about"></textarea>
-            </div>
-            <div class="col-md-14">
-              <label class="control-label">Status</label>
-              <select class="form-control" name="flag_about">
-                <option value="1" id="flag_aktif">Aktif</option>
-                <option value="0" id="flag_nonaktif">Tidak Aktif</option>
-              </select>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="reset" class="btn btn-primary pull-left btn-flat" data-dismiss="modal">Tidak</button>
-            <button type="submit" class="btn btn-danger btn-flat">Simpan Perubahan</a>
-          </div>
-        </div>
-    </form>
-    </div>
-  </div>
-
   <div class="row">
     <div class="col-md-12">
       @if(Session::has('message'))
@@ -121,97 +50,115 @@
         </div>
       @endif
     </div>
-    <div class="col-md-4">
-      <form class="form-horizontal" action="{{route('about.store')}}" method="post" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <div class="box box-success">
-          <div class="box-header with-border">
-            <h3 class="box-title">Formulir Tambah About Baru</h3>
-          </div>
-          <div class="box-body">
-            <div class="col-md-14">
-              <label class="control-label">Nama About</label>
-              <input type="text" name="nama_about" class="form-control">
+    @if($getabout == null)
+    <form class="form-horizontal" method="post" action="{{route('about.store')}}">
+      {{ csrf_field() }}
+        <div class="col-md-12">
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Form Deskripsi 9 Tins</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
             </div>
-            <div class="col-md-14">
-              <label class="control-label">Keterangan</label>
-              <textarea name="keterangan_about" rows="4" cols="40" class="form-control"></textarea>
+            <div class="box-body">
+              <div class="col-md-14">
+                <label class="control-label">Nama About</label>
+                <input type="text" name="nama_tentang" class="form-control">
+              </div>
+              <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
+                <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
+                <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
+              </div>
+              <div class="col-md-14">
+                <label class="control-label">Status</label>
+                <select class="form-control" name="flag_tentang">
+                  <option value="1" id="flag_aktif">Aktif</option>
+                  <option value="0" id="flag_nonaktif">Tidak Aktif</option>
+                </select>
+              </div>
             </div>
-            <div class="col-md-14">
-              <label class="control-label">Status</label>
-              <select class="form-control" name="flag_about">
-                <option value="1">Aktif</option>
-                <option value="0">Tidak Aktif</option>
-              </select>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary pull-right btn-sm btn-flat">Simpan</button>
             </div>
-          </div>
-          <div class="box-footer">
-            <button type="submit" class="btn btn-primary pull-right btn-sm btn-flat">Simpan</button>
-            <button type="reset" class="btn btn-danger btn-sm btn-flat pull-right" style="margin-right:5px;">Reset Formulir</button>
           </div>
         </div>
-      </form>
-    </div>
+    </form>
+    @endif
 
-    <div class="col-md-8">
-      <div class="box box-success">
-        <div class="box-header">
-          <h3 class="box-title">Seluruh Data About</h3>
-        </div><!-- /.box-header -->
-        <div class="box-body">
-          <table id="tabelinfo" class="table table-hover">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Nama</th>
-                <th>Keterangan</th>
-                <th>Status</th>
-                <th>Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $i=1; ?>
-              @foreach($getabout as $key)
-                <tr>
-                  <td>{{$i}}</td>
-                  <td>{{$key->nama_tentang}}</td>
-                  <td>{{$key->keterangan_tentang}}</td>
-                  <td>
-                    @if($key->flag_tentang=="1")
-                      <span class="badge bg-blue" data-toggle="tooltip" title="Aktif">
-                        <i class="fa fa-thumbs-up"></i>
-                      </span>
-                    @else
-                      <span class="badge bg-red" data-toggle="tooltip" title="Tidak Aktif">
-                        <i class="fa fa-thumbs-down"></i>
-                      </span>
-                    @endif
-                  </td>
-                  <td>
-                    @if($key->flag_tentang=="1")
-                      <span data-toggle="tooltip" title="Ubah Status">
-                        <a href="#" class="btn btn-xs btn-danger btn-flat flagpublish" data-toggle="modal" data-target="#modalflagedit" data-value="{{$key->id}}"><i class="fa fa-heartbeat"></i></a>
-                      </span>
-                    @else
-                      <span data-toggle="tooltip" title="Ubah Status">
-                        <a href="#" class="btn btn-xs btn-primary btn-flat flagpublish" data-toggle="modal" data-target="#modalflagedit" data-value="{{$key->id}}"><i class="fa fa-heart"></i></a>
-                      </span>
-                    @endif
-                    <span data-toggle="tooltip" title="Edit">
-                      <a href="#" class="btn btn-xs btn-warning btn-flat edit" data-toggle="modal" data-target="#modaledit" data-value="{{$key->id}}"><i class="fa fa-edit"></i></a>
-                    </span>
-                    <span data-toggle="tooltip" title="Hapus">
-                      <a href="#" class="btn btn-xs btn-danger btn-flat hapus" data-toggle="modal" data-target="#modaldelete" data-value="{{$key->id}}"><i class="fa fa-remove"></i></a>
-                    </span>
-                  </td>
-                </tr>
-                <?php $i++; ?>
-              @endforeach
-            </tbody>
-          </table>
+
+    @if($getabout != null)
+    <div class="col-md-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">&nbsp;&nbsp;&nbsp;About 9 Tins</h3>
         </div>
-      </div><!-- /.box -->
+        <div class="box-body">
+          <div class="col-md-14">
+            <label class="control-label">Nama About</label>
+            <input type="text" readonly="true" name="nama_tentang" class="form-control" value="{!! $getabout->nama_tentang !!}">
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="col-md-14">
+            <label class="control-label">Status About</label>
+            @if($getabout->flag_tentang==1)
+              <input type="text" readonly="true" name="nama_tentang" class="form-control" value="Aktif">
+            @else
+              <input type="text" readonly="true" name="nama_tentang" class="form-control" value="Tidak Aktif">
+            @endif
+          </div>
+        </div>
+        <div class="box-body clearfix">
+          <blockquote class="pull-left">
+            {!! $getabout->keterangan_tentang !!}
+          </blockquote>
+        </div>
+        <div class="box box-footer">
+          <span data-toggle="tooltip" title="Edit">
+            <a href="" class="btn btn-warning btn-flat btn-xs edit" data-toggle="modal" data-target="#myModalEdit" data-value="{{ $getabout->id }}"><i class="fa fa-edit"></i> Ubah About 9 Tins</a>
+          </span>
+        </div>
+      </div>
     </div>
+    @endif
+
+    @if($getabout != null)
+      <div class="modal fade" id="myModalEdit" role="dialog">
+        <div class="modal-dialog" style="width:700px;">
+          <form class="form-horizontal" action="{{route('about.edit')}}" method="post">
+            {!! csrf_field() !!}
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ubah About 9 Tins</h4>
+              </div>
+              <div class="modal-body">
+                  <div class="col-md-14">
+                  <label class="control-label">Nama About</label>
+                  <input type="text" name="nama_tentang" class="form-control">
+                </div>
+                <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
+                  <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
+                  <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
+                  <input type="hidden" name="id" value="{{ $getabout->id}}">
+                </div>
+                <div class="col-md-14">
+                  <label class="control-label">Status</label>
+                  <select class="form-control" name="flag_tentang">
+                    <option value="1" id="flag_aktif">Aktif</option>
+                    <option value="0" id="flag_nonaktif">Tidak Aktif</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-flat">Simpan</button>
+              </div>
+            </div>
+        </form>
+        </div>
+      </div>
+      @endif
   </div>
 
   <!-- jQuery 2.1.4 -->
@@ -230,43 +177,22 @@
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('dist/js/demo.js')}}"></script>
 
-  <script>
-    $(function () {
-      $("#tabelinfo").DataTable();
-
-      $("#tabelinfo").on("click", "a.flagpublish", function(){
-        var a = $(this).data('value');
-        $('#setflagpublish').attr('href', '{{url('admin/publish-about/')}}/'+a);
-      });
-
-      $("#tabelinfo").on("click", "a.hapus", function(){
-        var a = $(this).data('value');
-        $('#sethapus').attr('href', '{{url('admin/delete-about/')}}/'+a);
-      });
-
-      $("#tabelinfo").on("click", "a.edit", function(){
-        var a = $(this).data('value');
-        $.ajax({
-          url: "{{url('/')}}/admin/bind-about/"+a,
-          dataType: 'json',
-          success: function(data){
-            var id = data.id;
-            var nama_about = data.nama_tentang;
-            var keterangan_about = data.keterangan_tentang;
-            var flag_about = data.flag_tentang;
-
-            $('#id').attr('value', id);
-            $('#edit_nama_about').val(nama_about);
-            $('#edit_keterangan_about').val(keterangan_about);
-            if(flag_about=="1") {
-              $('#flag_aktif').attr('selected', true);
-            } else {
-              $('#flag_nonaktif').attr('selected', true);
-            }
-          }
-        })
-      });
+  <script src="{{asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+<script>
+  $(function () {
+    $(".textarea").wysihtml5({
+      toolbar: {
+        "font-styles": true, //Font styling, e.g. h1, h2, etc.
+        "emphasis": true, //Italics, bold, etc.
+        "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers.
+        "html": false, //Button which allows you to edit the generated HTML.
+        "link": false, //Button to insert a link.
+        "image": false, //Button to insert an image.
+        "color": false, //Button to change color of font
+        "blockquote" : false
+     }
     });
-  </script>
+  });
+</script>
 
 @stop
