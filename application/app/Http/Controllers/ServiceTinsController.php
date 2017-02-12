@@ -9,13 +9,13 @@ use Image;
 use App\Models\About;
 use App\Http\Requests;
 
-class AboutController extends Controller
+class ServiceTinsController extends Controller
 {
   public function index()
   {
-    $getabout = About::select('*')->where('flag_tentang', 1)->first();
+    $getservice = About::select('*')->where('flag_tentang', 2)->first();
     // dd($getabout);
-    return view('backend/pages/kelolaabout', compact('getabout'));
+    return view('backend/pages/kelolaservicetins', compact('getservice'));
   }
 
   public function store(Request $request)
@@ -38,11 +38,11 @@ class AboutController extends Controller
     $set->id_user = Auth::user()->id;
     $set->nama_tentang = $request->nama_tentang;
     $set->keterangan_tentang = $request->keterangan_tentang;
-    $set->flag_tentang = 1;
+    $set->flag_tentang = 2;
     $set->url_tentang = $photo_name;
     $set->save();
 
-    return redirect()->route('about.index')->with('message', 'Berhasil memasukkan about baru.');
+    return redirect()->route('service.tins.index')->with('message', 'Berhasil memasukkan service baru.');
   }
 
   public function bind($id)
@@ -69,11 +69,11 @@ class AboutController extends Controller
       $set = About::find($request->id);
       $set->nama_tentang = $request->nama_tentang;
       $set->keterangan_tentang = $request->keterangan_tentang;
-      $set->flag_tentang = 1;
+      $set->flag_tentang = 2;
       $set->url_tentang = $photo_name;
       $set->save();
 
-    return redirect()->route('about.index')->with('message', 'Berhasil mengubah konten about.');
+    return redirect()->route('service.tins.index')->with('message', 'Berhasil mengubah konten service.');
   }
   
   public function delete($id)
@@ -81,6 +81,6 @@ class AboutController extends Controller
     $set = About::find($id);
     $set->delete();
 
-    return redirect()->route('about.index')->with('message', 'Berhasil menghapus about.');
+    return redirect()->route('service.tins.index')->with('message', 'Berhasil menghapus service.');
   }
 }

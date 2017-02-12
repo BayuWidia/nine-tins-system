@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="#" style="padding-left: 20%; margin-top: -4%">
+                    <a class="navbar-brand" href="#" style="margin-top: -4%">
                         <img src="{{ asset('theme/images/logo2.png')}}" alt="logo">
                     </a>
                     

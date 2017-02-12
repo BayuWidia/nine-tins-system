@@ -115,6 +115,9 @@
       <ul class="treeview-menu">
         <li><a href="{{url('admin/kelola-about')}}"><i class="fa fa-circle-o"></i> Kelola About</a></li>
       </ul>
+      <ul class="treeview-menu">
+        <li><a href="{{url('admin/kelola-service-tins')}}"><i class="fa fa-circle-o"></i> Kelola About Service</a></li>
+      </ul>
     </li>
     <li class="treeview">
       <a href="#" id="colortreemenulihref">

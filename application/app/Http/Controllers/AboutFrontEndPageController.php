@@ -17,7 +17,7 @@ class AboutFrontEndPageController extends Controller
   public function index()
   { 
 
-  	$getabout = About::select('*')->first();
+  	$getabout = About::select('*')->where('flag_tentang',1)->get();
   	
   	$getskill= Skill::select('*')
       ->limit(3)

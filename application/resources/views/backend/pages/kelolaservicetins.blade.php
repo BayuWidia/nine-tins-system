@@ -8,12 +8,12 @@
 
 @section('breadcrumb')
   <h1>
-    About
-    <small>Kelola About</small>
+    Service
+    <small>Kelola Service</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="{{url('backend/dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Kelola About</li>
+    <li class="active">Kelola Service</li>
   </ol>
 @stop
 
@@ -50,8 +50,8 @@
         </div>
       @endif
     </div>
-    @if($getabout == null)
-    <form class="form-horizontal" method="post" action="{{route('about.store')}}" enctype="multipart/form-data">
+    @if($getservice == null)
+    <form class="form-horizontal" method="post" action="{{route('service.tins.store')}}" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="col-md-12">
           <div class="box box-success">
@@ -63,16 +63,16 @@
             </div>
             <div class="box-body">
               <div class="col-md-14">
-                <label class="control-label">Nama About</label>
+                <label class="control-label">Nama Service</label>
                 <input type="text" name="nama_tentang" class="form-control">
               </div>
               <div class="col-md-14">
-                <label class="control-label">Gambar About</label>
+                <label class="control-label">Gambar Service</label>
                 <input type="file" name="url_tentang" class="form-control">
               </div>
                 <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 495 x 298 px.</i></span>
               <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
-                <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
+                <label class="control-label" style="margin-bottom:10px;">Isikan Service 9 Tins :</label>
                 <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
               </div>
             </div>
@@ -85,56 +85,56 @@
     @endif
 
 
-    @if($getabout != null)
+    @if($getservice != null)
     <div class="col-md-12">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title">&nbsp;&nbsp;&nbsp;About 9 Tins</h3>
+          <h3 class="box-title">&nbsp;&nbsp;&nbsp;Service 9 Tins</h3>
         </div>
         <div class="box-body">
           <div class="col-md-14">
-            <label class="control-label">Nama About</label>
-            <input type="text" readonly="true" name="nama_tentang" class="form-control" value="{!! $getabout->nama_tentang !!}">
+            <label class="control-label">Nama Service</label>
+            <input type="text" readonly="true" name="nama_tentang" class="form-control" value="{!! $getservice->nama_tentang !!}">
           </div>
         </div>
         <div class="box-body clearfix">
           <blockquote class="pull-left">
-            {!! $getabout->keterangan_tentang !!}
+            {!! $getservice->keterangan_tentang !!}
           </blockquote>
         </div>
         <div class="box box-footer">
           <span data-toggle="tooltip" title="Edit">
-            <a href="" class="btn btn-warning btn-flat btn-xs edit" data-toggle="modal" data-target="#myModalEdit" data-value="{{ $getabout->id }}"><i class="fa fa-edit"></i> Ubah About 9 Tins</a>
+            <a href="" class="btn btn-warning btn-flat btn-xs edit" data-toggle="modal" data-target="#myModalEdit" data-value="{{ $getservice->id }}"><i class="fa fa-edit"></i> Ubah Service 9 Tins</a>
           </span>
         </div>
       </div>
     </div>
     @endif
 
-    @if($getabout != null)
+    @if($getservice != null)
       <div class="modal fade" id="myModalEdit" role="dialog">
         <div class="modal-dialog" style="width:700px;">
-          <form class="form-horizontal" action="{{route('about.edit')}}" method="post" enctype="multipart/form-data">
+          <form class="form-horizontal" action="{{route('service.tins.edit')}}" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Ubah About 9 Tins</h4>
+                <h4 class="modal-title">Ubah Service 9 Tins</h4>
               </div>
                 <div class="modal-body">
                   <div class="col-md-14">
-                    <label class="control-label">Nama About</label>
+                    <label class="control-label">Nama Service</label>
                     <input type="text" name="nama_tentang" class="form-control">
                   </div>
                   <div class="col-md-14">
-                    <label class="control-label">Gambar About</label>
+                    <label class="control-label">Gambar Service</label>
                     <input type="file" name="url_tentang" class="form-control">
                   </div>
                   <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
                   <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
-                    <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
+                    <label class="control-label" style="margin-bottom:10px;">Isikan Service 9 Tins :</label>
                     <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
-                    <input type="hidden" name="id" value="{{ $getabout->id}}">
+                    <input type="hidden" name="id" value="{{ $getservice->id}}">
                   </div>
                 </div>
               <div class="modal-footer">

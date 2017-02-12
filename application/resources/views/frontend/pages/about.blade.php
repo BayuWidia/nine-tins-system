@@ -24,19 +24,21 @@
 
     <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container">
+            @foreach($getabout as $key)
             <div class="row">
                 <div class="col-sm-6">
-                @if($getabout->url_tentang != null)
-                    <?php $photo575 = explode(".", $getabout->url_tentang); ?>
-                    <img src="{{url('images')}}/{{$photo575[0]}}_495x298.{{$photo575[1]}}" alt="">
+                @if($key->url_tentang != null)
+                    <?php $photo575 = explode(".", $key->url_tentang); ?>
+                    <img src="{{url('images')}}/{{$photo575[0]}}_495x298.{{$photo575[1]}}" class="img-responsive" alt="">
                 @else
-                    <img src="{{ asset('theme/images/aboutus/1.png')}}" class="img-responsive" alt="">
+                    <img src="{{ asset('theme/images/aboutus/.png')}}" class="img-responsive" alt="">
                 @endif
                 </div>
-                @if($getabout != null)
-                    <p><?php echo $getabout->keterangan_tentang ?></p>
+                @if($key != null)
+                    <p><?php echo $key->keterangan_tentang ?></p>
                 @endif
             </div>
+            @endforeach
         </div>
     </section>
 
@@ -67,12 +69,12 @@
                 <div class="row">
                     <div class="action take-tour">
                         <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Triangle Corporate Template</h1>
-                            <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+                            <h2 class="title">Professional in The Creation of Website and Mobile</h2>
+                            <p>9 Technology Information and Solution</p>
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="tour-button">
-                                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
+                                
                              </div>
                         </div>
                     </div>

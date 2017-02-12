@@ -167,6 +167,17 @@ Route::get('admin/bind-about/{id}', 'AboutController@bind')->name('about.bind');
 
 
 // =======================================================================================================================
+//About 2
+Route::get('admin/kelola-service-tins', 'ServiceTinsController@index')->name('service.tins.index');
+Route::post('admin/store-service-tins', 'ServiceTinsController@store')->name('service.tins.store');
+Route::get('admin/delete-service-tins/{id}', 'ServiceTinsController@delete')->name('service.tins.delete');
+Route::post('admin/edit-service-tins', 'ServiceTinsController@edit')->name('service.tins.edit');
+Route::get('admin/publish-service-tins/{id}', 'ServiceTinsController@publish')->name('service.tins.publish');
+Route::get('admin/bind-service-tins/{id}', 'ServiceTinsController@bind')->name('service.tins.bind');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
 //Client
 Route::get('admin/lihat-client', 'ClientController@lihat')->name('client.lihat');
 Route::get('admin/tambah-client', 'ClientController@tambah')->name('client.tambah');

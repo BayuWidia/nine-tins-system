@@ -23,15 +23,22 @@
    </section>
     <!--/#page-breadcrumb-->
 
-    <section id="company-information" class="choose">
+    <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container">
+            @foreach($getabout as $key)
             <div class="row">
-                <div class="col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0ms">
-                    <img src="{{ asset('theme/images/services/4.png')}}" class="img-responsive" alt="">
+                <div class="col-sm-6">
+                     @if($key->url_tentang != null)
+                    <?php $photo575 = explode(".", $key->url_tentang); ?>
+                        <img src="{{url('images')}}/{{$photo575[0]}}_495x298.{{$photo575[1]}}" class="img-responsive" alt="">
+                    @else
+                        <img src="{{ asset('theme/images/aboutus/.png')}}" class="img-responsive" alt="">
+                    @endif
                 </div>
-                <div class="col-sm-6 padding-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0ms">
-                    <h2>Why Choose Us?</h2>
-                    <p>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore<br /> tail corned beef Capicola nisi flank sed.</p>
+                <h2>Why Choose Us?</h2>
+                    @if($key != null)
+                        <p><?php echo $key->keterangan_tentang ?></p>
+                    @endif
                     <ul class="elements">
                         <li class="wow fadeInUp" data-wow-duration="900ms" data-wow-delay="100ms"><i class="fa fa-angle-right"></i> when an unknown printer took a galley of type</li>
                         <li class="wow fadeInUp" data-wow-duration="800ms" data-wow-delay="200ms"><i class="fa fa-angle-right"></i> scrambled it to make a type specimen book.</li>
@@ -39,8 +46,8 @@
                         <li class="wow fadeInUp" data-wow-duration="600ms" data-wow-delay="400ms"><i class="fa fa-angle-right"></i> scrambled it to make a type specimen book.</li>
                         <li class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms"><i class="fa fa-angle-right"></i> but also the leap into electronic typesetting.</li>
                     </ul>
-                </div>
             </div>
+            @endforeach
         </div>
     </section>
     <!--/#company-information-->
@@ -71,12 +78,11 @@
                 <div class="row">
                     <div class="action take-tour">
                         <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Triangle Corporate Template</h1>
-                            <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+                            <h2 class="title">Professional in The Creation of Website and Mobile</h2>
+                            <p>9 Technology Information and Solution</p>
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                             <div class="tour-button">
-                                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
                              </div>
                         </div>
                     </div>
@@ -89,7 +95,7 @@
     <section id="recent-projects" class="recent-projects">
         <div class="container">
             <div class="row">
-                <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Recent Projects</h1>
+                <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Last Projects</h1>
                 <p class="text-center padding-bottom wow fadeInDown" data-wow-duration="400ms" data-wow-delay="400ms">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
                 Ut enim ad minim veniam, quis nostrud </p>
                 @foreach($getproject as $key)
@@ -132,8 +138,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <p><img src="{{ asset('theme/images/home/clients.png')}}" class="img-responsive" alt=""></p>
-                        <h1 class="title">Happy Clients</h1>
+                        <p><img src="{{ asset('theme/images/home/clients3.png')}}" class="img-responsive" alt=""></p>
+                        <h1 class="title">Our Clients</h1>
                         <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
