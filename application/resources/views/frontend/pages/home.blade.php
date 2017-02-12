@@ -12,7 +12,9 @@
                     <div class="slide-text">
                         <h1>We Are 9 Tins</h1>
                         <h2>Technology Information and Solutions</h2>
-                        <p><?php echo substr($getabout->keterangan_tentang, 0, 300) ?>...</p>
+                        @if($getabout != null)
+                            <p><?php echo substr($getabout->keterangan_tentang, 0, 300) ?>...</p>
+                        @endif
                         <a href="{{route('about.front.index')}}" class="btn btn-common">View More...</a>
                     </div>
                     <img src="{{ asset('theme/images/home/slider/hill.png')}}" class="slider-hill" alt="slider image">
@@ -30,33 +32,18 @@
     <section id="services">
         <div class="container">
             <div class="row">
+                @foreach($getskill as $key)
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="single-service">
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <img src="{{ asset('theme/images/home/icon1.png')}}" alt="">
+                            <?php $photo80 = explode(".", $key->url_keahlian); ?>
+                            <img src="{{url('images')}}/{{$photo80[0]}}_80x85.{{$photo80[1]}}" alt="">
                         </div>
-                        <h2>Incredibly Responsive</h2>
-                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                        <h2>{{$key->nama_keahlian}}</h2>
+                        <p>{{$key->keterangan_keahlian}}</p>
                     </div>
                 </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                            <img src="{{ asset('theme/images/home/icon2.png')}}" alt="">
-                        </div>
-                        <h2>Superior Typography</h2>
-                        <p>Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.</p>
-                    </div>
-                </div>
-                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                    <div class="single-service">
-                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                            <img src="{{ asset('theme/images/home/icon3.png')}}" alt="">
-                        </div>
-                        <h2>Swift Page Builder</h2>
-                        <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -88,29 +75,58 @@
             <div class="row">
                 <div class="single-features">
                     <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <img src="{{ asset('theme/images/home/image1.png')}}" class="img-responsive" alt="">
+                    @if($getfeature[0]->url_fitur!=null)
+                        <?php $photo400 = explode(".", $getfeature[0]->url_fitur); ?>
+                        <img src="{{url('images')}}/{{$photo400[0]}}_400x184.{{$photo400[1]}}" class="img-responsive" alt="">
+                    @else
+                        <img src="{{ asset('theme/images/home/image1.png')}}" class="img-responsive" alt=""> 
+                    @endif
                     </div>
                     <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Experienced and Enthusiastic</h2>
-                        <P>Pork belly leberkas cow short ribs capicola pork loin. Doner fatback frankfurter jerky meatball pastrami bacon tail sausage. Turkey fatback ball tip, tri-tip tenderloin drumstick salami strip steak.</P>
+                        <h2>{{$getfeature[0]->nama_fitur}}</h2>
+                        <P>{{$getfeature[0]->keterangan_fitur}}</P>
                     </div>
                 </div>
                 <div class="single-features">
                     <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Built for the Responsive Web</h2>
-                        <P>Mollit eiusmod id chuck turducken laboris meatloaf pork loin tenderloin swine. Pancetta excepteur fugiat strip steak tri-tip. Swine salami eiusmod sint, ex id venison non. Fugiat ea jowl cillum meatloaf.</P>
+                        <h2>{{$getfeature[1]->nama_fitur}}</h2>
+                        <P>{{$getfeature[1]->keterangan_fitur}}</P>
                     </div>
                     <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <img src="{{ asset('theme/images/home/image2.png')}}" class="img-responsive" alt="">
+                        @if($getfeature[1]->url_fitur!=null)
+                            <?php $photo427 = explode(".", $getfeature[1]->url_fitur); ?>
+                            <img src="{{url('images')}}/{{$photo427[0]}}_427x140.{{$photo427[1]}}" class="img-responsive" alt="">
+                        @else
+                            <img src="{{ asset('theme/images/home/image2.png')}}" class="img-responsive" alt=""> 
+                        @endif
                     </div>
                 </div>
                 <div class="single-features">
                     <div class="col-sm-5 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <img src="{{ asset('theme/images/home/image3.png')}}" class="img-responsive" alt="">
+                        @if($getfeature[2]->url_fitur!=null)
+                            <?php $photo400 = explode(".", $getfeature[2]->url_fitur); ?>
+                            <img src="{{url('images')}}/{{$photo400[0]}}_400x184.{{$photo400[1]}}" class="img-responsive" alt="">
+                        @else
+                            <img src="{{ asset('theme/images/home/image1.png')}}" class="img-responsive" alt=""> 
+                        @endif
                     </div>
                     <div class="col-sm-6 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <h2>Experienced and Enthusiastic</h2>
-                        <P>Ut officia cupidatat anim excepteur fugiat cillum ea occaecat rump pork chop tempor. Ut tenderloin veniam commodo. Shankle aliquip short ribs, chicken eiusmod exercitation shank landjaeger spare ribs corned beef.</P>
+                        <h2>{{$getfeature[2]->nama_fitur}}</h2>
+                        <P>{{$getfeature[2]->keterangan_fitur}}</P>
+                    </div>
+                </div>
+                 <div class="single-features">
+                    <div class="col-sm-6 col-sm-offset-1 align-right wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <h2>{{$getfeature[3]->nama_fitur}}</h2>
+                        <P>{{$getfeature[3]->keterangan_fitur}}</P>
+                    </div>
+                    <div class="col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                        @if($getfeature[3]->url_fitur!=null)
+                            <?php $photo427 = explode(".", $getfeature[3]->url_fitur); ?>
+                            <img src="{{url('images')}}/{{$photo427[0]}}_427x140.{{$photo427[1]}}" class="img-responsive" alt="">
+                        @else
+                            <img src="{{ asset('theme/images/home/image2.png')}}" class="img-responsive" alt=""> 
+                        @endif
                     </div>
                 </div>
             </div>
@@ -128,24 +144,16 @@
                         <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        @foreach($getclient as $key)
                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
+                            @if($key->logo_client == null)
+                                <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a> 
+                            @else
+                                <?php $photo130_2 = explode(".", $key->logo_client); ?>
+                                <img src="{{url('images')}}/{{$photo130_2[0]}}_130x50.{{$photo130_2[1]}}" class="img-responsive" alt="">
+                            @endif
                         </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="{{ asset('theme/images/home/client1.png')}}" class="img-responsive" alt=""></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

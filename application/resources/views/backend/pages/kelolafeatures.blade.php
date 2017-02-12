@@ -147,6 +147,7 @@
               <label class="control-label">Gambar Features</label>
               <input type="file" name="url_features" class="form-control">
             </div>
+              <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 400 x 184 px.</i></span>
             <div class="col-md-14">
               <label class="control-label">Status</label>
               <select class="form-control" name="flag_features">

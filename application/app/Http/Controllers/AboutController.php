@@ -21,11 +21,25 @@ class AboutController extends Controller
   public function store(Request $request)
   {
     // dd($request);
+    $file = $request->file('url_tentang');
+    $photo_name = "";
+    if($file!="") {
+      $photo_name = time(). '.' . $file->getClientOriginalExtension();
+
+        $photo1 = explode('.', $photo_name);
+        $photo200 = $photo1[0]."_200x122.".$photo1[1];
+        $photo495 = $photo1[0]."_495x298.".$photo1[1];
+
+        Image::make($file)->fit(866,490)->save('images/'. $photo_name);
+        Image::make($file)->fit(495,298)->save('images/'. $photo495);
+    } 
+
     $set = new About;
     $set->id_user = Auth::user()->id;
     $set->nama_tentang = $request->nama_tentang;
     $set->keterangan_tentang = $request->keterangan_tentang;
     $set->flag_tentang = $request->flag_tentang;
+    $set->url_tentang = $photo_name;
     $set->save();
 
     return redirect()->route('about.index')->with('message', 'Berhasil memasukkan about baru.');
@@ -53,10 +67,24 @@ class AboutController extends Controller
 
   public function edit(Request $request)
   {
+    // dd($request);
+    $file = $request->file('url_tentang');
+    $photo_name = "";
+    if($file!="") {
+      $photo_name = time(). '.' . $file->getClientOriginalExtension();
+
+        $photo1 = explode('.', $photo_name);
+        $photo200 = $photo1[0]."_200x122.".$photo1[1];
+        $photo495 = $photo1[0]."_495x298.".$photo1[1];
+
+        Image::make($file)->fit(866,490)->save('images/'. $photo_name);
+        Image::make($file)->fit(495,298)->save('images/'. $photo495);
+    } 
       $set = About::find($request->id);
       $set->nama_tentang = $request->nama_tentang;
       $set->keterangan_tentang = $request->keterangan_tentang;
       $set->flag_tentang = $request->flag_tentang;
+      $set->url_tentang = $photo_name;
       $set->save();
 
     return redirect()->route('about.index')->with('message', 'Berhasil mengubah konten about.');

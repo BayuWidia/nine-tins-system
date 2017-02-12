@@ -9,7 +9,7 @@ class About extends Model
   protected $table = 'tentang';
 
   protected $fillable = [
-    'id_user', 'nama_tentang', 'keterangan_tentang', 'flag_tentang'
+    'id_user', 'nama_tentang', 'keterangan_tentang', 'flag_tentang', 'url_tentang'
   ];
 
 }

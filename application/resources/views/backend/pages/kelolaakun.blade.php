@@ -213,6 +213,7 @@
                   </span>
                 @endif
               </div>
+              <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 480 X 495px.</i></span>
               <div class="col-md-14 {{ $errors->has('password') ? 'has-error' : '' }}">
                 <label class="control-label">Password</label>
                 <input type="password" name="password" class="form-control" placeholder="Password"

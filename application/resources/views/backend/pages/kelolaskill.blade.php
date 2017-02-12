@@ -92,6 +92,11 @@
               <input type="hidden" name="id" id="id">
             </div>
             <div class="col-md-14">
+              <label class="control-label">Gambar Skill</label>
+              <input type="file" name="url_keahlian" class="form-control">
+              <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+            </div>
+            <div class="col-md-14">
               <label class="control-label">Status</label>
               <select class="form-control" name="flag_skill">
                 <option value="1" id="flag_aktif">Aktif</option>
@@ -146,6 +151,11 @@
               <label class="control-label">Persentase</label>
               <input type="text" name="persentase" class="form-control" id="persentase" maxlength="3">
             </div>
+            <div class="col-md-14">
+              <label class="control-label">Gambar Keahlian</label>
+              <input type="file" name="url_keahlian" class="form-control">
+            </div>
+              <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 80 x 85 px.</i></span>
             <div class="col-md-14">
               <label class="control-label">Status</label>
               <select class="form-control" name="flag_skill">

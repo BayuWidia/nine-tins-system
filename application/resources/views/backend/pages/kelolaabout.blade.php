@@ -51,7 +51,7 @@
       @endif
     </div>
     @if($getabout == null)
-    <form class="form-horizontal" method="post" action="{{route('about.store')}}">
+    <form class="form-horizontal" method="post" action="{{route('about.store')}}" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="col-md-12">
           <div class="box box-success">
@@ -66,6 +66,11 @@
                 <label class="control-label">Nama About</label>
                 <input type="text" name="nama_tentang" class="form-control">
               </div>
+              <div class="col-md-14">
+                <label class="control-label">Gambar About</label>
+                <input type="file" name="url_tentang" class="form-control">
+              </div>
+                <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 495 x 298 px.</i></span>
               <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
                 <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
                 <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
@@ -126,31 +131,36 @@
     @if($getabout != null)
       <div class="modal fade" id="myModalEdit" role="dialog">
         <div class="modal-dialog" style="width:700px;">
-          <form class="form-horizontal" action="{{route('about.edit')}}" method="post">
+          <form class="form-horizontal" action="{{route('about.edit')}}" method="post" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Ubah About 9 Tins</h4>
               </div>
-              <div class="modal-body">
+                <div class="modal-body">
                   <div class="col-md-14">
-                  <label class="control-label">Nama About</label>
-                  <input type="text" name="nama_tentang" class="form-control">
+                    <label class="control-label">Nama About</label>
+                    <input type="text" name="nama_tentang" class="form-control">
+                  </div>
+                  <div class="col-md-14">
+                    <label class="control-label">Gambar About</label>
+                    <input type="file" name="url_tentang" class="form-control">
+                  </div>
+                  <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                  <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
+                    <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
+                    <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
+                    <input type="hidden" name="id" value="{{ $getabout->id}}">
+                  </div>
+                  <div class="col-md-14">
+                    <label class="control-label">Status</label>
+                    <select class="form-control" name="flag_tentang">
+                      <option value="1" id="flag_aktif">Aktif</option>
+                      <option value="0" id="flag_nonaktif">Tidak Aktif</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
-                  <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
-                  <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
-                  <input type="hidden" name="id" value="{{ $getabout->id}}">
-                </div>
-                <div class="col-md-14">
-                  <label class="control-label">Status</label>
-                  <select class="form-control" name="flag_tentang">
-                    <option value="1" id="flag_aktif">Aktif</option>
-                    <option value="0" id="flag_nonaktif">Tidak Aktif</option>
-                  </select>
-                </div>
-              </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary btn-flat">Simpan</button>
               </div>

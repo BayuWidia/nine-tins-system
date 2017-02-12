@@ -98,6 +98,8 @@
                   <input type="file" class="form-control" name="url_client">
                   @if(isset($editclient))
                     <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                  @else 
+                    <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 261px X 269px.</i></span>
                   @endif
                 </div>
               </div>
@@ -107,6 +109,8 @@
                   <input type="file" class="form-control" name="logo_client">
                   @if(isset($editclient))
                     <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                  @else 
+                    <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 261px X 269px.</i></span>
                   @endif
                 </div>
               </div>

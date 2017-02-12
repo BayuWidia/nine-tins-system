@@ -127,6 +127,8 @@
                   <input type="file" class="form-control" name="url_foto">
                   @if(isset($editberita))
                     <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                  @else 
+                    <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 850px X 400px.</i></span>
                   @endif
                 </div>
               </div>

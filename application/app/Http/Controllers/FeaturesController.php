@@ -29,16 +29,16 @@ class FeaturesController extends Controller
         $photo80 = $photo1[0]."_80x85.".$photo1[1];
         $photo400 = $photo1[0]."_400x184.".$photo1[1];
         $photo427 = $photo1[0]."_427x140.".$photo1[1];
-        $photo385 = $photo1[0]."_385x130.".$photo1[1];
-        $photo575 = $photo1[0]."_575x450.".$photo1[1];
+        // $photo385 = $photo1[0]."_385x130.".$photo1[1];
+        // $photo575 = $photo1[0]."_575x450.".$photo1[1];
 
         Image::make($file)->fit(866,490)->save('images/'. $photo_name);
         Image::make($file)->fit(200,122)->save('images/'. $photo200);
         Image::make($file)->fit(80,85)->save('images/'. $photo80);
         Image::make($file)->fit(400,184)->save('images/'. $photo400);
         Image::make($file)->fit(427,140)->save('images/'. $photo427);
-        Image::make($file)->fit(385,130)->save('images/'. $photo385);
-        Image::make($file)->fit(575,450)->save('images/'. $photo575);
+        // Image::make($file)->fit(385,130)->save('images/'. $photo385);
+        // Image::make($file)->fit(575,450)->save('images/'. $photo575);
 
         $set = new Features;
         $set->id_user = Auth::user()->id;
@@ -90,8 +90,8 @@ class FeaturesController extends Controller
       $photo80 = $photo1[0]."_80x85.".$photo1[1];
       $photo400 = $photo1[0]."_400x184.".$photo1[1];
       $photo427 = $photo1[0]."_427x140.".$photo1[1];
-      $photo385 = $photo1[0]."_385x130.".$photo1[1];
-      $photo575 = $photo1[0]."_575x450.".$photo1[1];
+      // $photo385 = $photo1[0]."_385x130.".$photo1[1];
+      // $photo575 = $photo1[0]."_575x450.".$photo1[1];
 
 
       Image::make($file)->fit(866,490)->save('images/'. $photo_name);
@@ -99,8 +99,8 @@ class FeaturesController extends Controller
       Image::make($file)->fit(80,85)->save('images/'. $photo80);
       Image::make($file)->fit(400,184)->save('images/'. $photo400);
       Image::make($file)->fit(427,140)->save('images/'. $photo427);
-      Image::make($file)->fit(385,130)->save('images/'. $photo385);
-      Image::make($file)->fit(575,450)->save('images/'. $photo575);
+      // Image::make($file)->fit(385,130)->save('images/'. $photo385);
+      // Image::make($file)->fit(575,450)->save('images/'. $photo575);
 
       $set = Features::find($request->id);
       $set->nama_fitur = $request->nama_features;

@@ -135,6 +135,7 @@
               <label class="control-label">Gambar</label>
               <input type="file" name="url_gambar" class="form-control">
             </div>
+            <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 480 x 270 px.</i></span>
             <div class="col-md-14">
               <label class="control-label">Keterangan</label>
               <textarea name="keterangan_gambar" rows="4" cols="40" class="form-control"></textarea>

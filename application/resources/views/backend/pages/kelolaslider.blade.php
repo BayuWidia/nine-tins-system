@@ -134,8 +134,8 @@
             <div class="col-md-14">
               <label class="control-label">Gambar Slider</label>
               <input type="file" name="url_slider" class="form-control">
-              <span style="color:red;">* Ukuran Slider 866px X 490px.</span>
             </div>
+            <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 866px X 490px.</i></span>
             <div class="col-md-14">
               <label class="control-label">Keterangan</label>
               <textarea name="keterangan_slider" rows="4" cols="40" class="form-control"></textarea>

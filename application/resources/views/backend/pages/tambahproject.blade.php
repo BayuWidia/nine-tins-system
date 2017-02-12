@@ -250,6 +250,8 @@
                   <input type="file" class="form-control" name="logo_project">
                   @if(isset($editproject))
                     <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
+                  @else
+                    <span class="text-muted"><i>* Rekomendasi ukuran terbaik: 261px X 269px.</i></span>
                   @endif
                 </div>
               </div>
