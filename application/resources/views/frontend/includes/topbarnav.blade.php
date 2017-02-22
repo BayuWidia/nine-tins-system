@@ -21,12 +21,12 @@
                         <li><a href="{{route('service.front.index')}}">Service</a></li>
                         <li><a href="{{route('portofolio.front.index')}}">Portofolio</a></li>
                         <li><a href="{{route('contact.front.index')}}">Contact</a></li>
-                        <li class="dropdown"><a href="blog.html">Bagi Pengetahuan <i class="fa fa-angle-down"></i></a>
+                        <!-- <li class="dropdown"><a href="blog.html">Bagi Pengetahuan <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="{{route('bagi.pengetahuan.front.index')}}">TEST 1</a></li>
                             </ul>
                         </li>
-                         <li><a href="{{route('foto.front.index')}}">Foto</a></li>                 
+                         <li><a href="{{route('foto.front.index')}}">Foto</a></li> -->                 
                     </ul>
                 </div>
             </div>

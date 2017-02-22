@@ -17,11 +17,12 @@ Route::get('/', ['as' => 'index', 'uses' => 'WelcomeFrontEndPageController@index
 Route::get('front/about', 'AboutFrontEndPageController@index')->name('about.front.index');
 Route::get('front/service', 'ServiceFrontEndPageController@index')->name('service.front.index');
 Route::get('front/portofolio', 'PortofolioFrontEndPageController@index')->name('portofolio.front.index');
-Route::get('front/portofolio-detail', 'DetailPortofolioFrontEndPageController@index')->name('detail.portofolio.front.index');
+Route::get('front/portofolio-detail/{id}', 'DetailPortofolioFrontEndPageController@index')->name('detail.portofolio.front.index');
 Route::get('front/contact', 'ContactFrontEndPageController@index')->name('contact.front.index');
 Route::get('front/bagi-pengetahuan', 'BagiPengetahuanFrontEndPageController@index')->name('bagi.pengetahuan.front.index');
 Route::get('front/bagi-pengetahuan-detail', 'DetailBagiPengetahuanFrontEndPageController@index')->name('detail.bagi.pengetahuan.front.index');
 Route::get('front/foto', 'FotoFrontEndPageController@index')->name('foto.front.index');
+
 
 ///////////////////////////////////////// END FRONTEND ROUTE /////////////////////////////////////////
 
@@ -141,6 +142,16 @@ Route::get('admin/delete-skill/{id}', 'SkillController@delete')->name('skill.del
 Route::post('admin/edit-skill', 'SkillController@edit')->name('skill.edit');
 Route::get('admin/publish-skill/{id}', 'SkillController@publish')->name('skill.publish');
 Route::get('admin/bind-skill/{id}', 'SkillController@bind')->name('skill.bind');
+// =======================================================================================================================
+
+
+// =======================================================================================================================
+//Pesan
+Route::get('admin/kelola-pesan', 'PesanController@index')->name('pesan.index');
+Route::post('admin/store-pesan', 'PesanController@store')->name('pesan.store');
+Route::get('admin/delete-pesan/{id}', 'PesanController@delete')->name('pesan.delete');
+Route::post('admin/edit-pesan', 'PesanController@edit')->name('pesan.edit');
+Route::get('admin/bind-pesan/{id}', 'PesanController@bind')->name('pesan.bind');
 // =======================================================================================================================
 
 

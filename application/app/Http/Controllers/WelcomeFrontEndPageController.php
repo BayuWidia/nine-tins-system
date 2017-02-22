@@ -10,6 +10,8 @@ use App\Models\Services;
 use App\Models\Skill;
 use App\Models\Client;
 use App\Models\Features;
+use App\Models\Blockquote;
+use App\Models\Testimonial;
 use App\Http\Controllers\Controller;
 
 class WelcomeFrontEndPageController extends Controller
@@ -25,10 +27,12 @@ class WelcomeFrontEndPageController extends Controller
 
     $getfeature = Features::select('*')->get();
     $getclient = Client::select('*')->get();
+    $getclient = Client::select('*')->get();
+    $getblockquote = Blockquote::select('*')->orderby('created_at','desc')->limit(2)->get();
+    $gettestimonial = Testimonial::select('*')->orderby('created_at','desc')->limit(2)->get();
 
-
-    // dd($getclient);
-    return view('frontend.pages.home', compact('getabout', 'getskill', 'getfeature', 'getclient'));
+    // dd($gettestimonial);
+    return view('frontend.pages.home', compact('getabout', 'getskill', 'getfeature', 'getclient','getblockquote','gettestimonial'));
   }
 
   

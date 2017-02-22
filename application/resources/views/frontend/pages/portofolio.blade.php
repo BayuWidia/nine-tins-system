@@ -44,12 +44,22 @@
                         <div class="portfolio-wrapper">
                             <div class="portfolio-single">
                                 <div class="portfolio-thumb">
-                                    <img src="{{ asset('theme/images/portfolio/1.jpg')}}" class="img-responsive" alt="">
+                                    @if($key->logo_project != null)
+                                    <?php $photo261 = explode(".", $key->logo_project); ?>
+                                        <img src="{{url('images')}}/{{$photo261[0]}}_261x269.{{$photo261[1]}}" class="img-responsive" alt="">
+                                    @else
+                                        <img src="{{ asset('theme/images/portfolio/1.jpg')}}" class="img-responsive" alt="">
+                                    @endif
                                 </div>
                                 <div class="portfolio-view">
                                     <ul class="nav nav-pills">
-                                        <li><a href="{{route('detail.portofolio.front.index')}}"><i class="fa fa-link"></i></a></li>
-                                        <li><a href="images/portfolio/1.jpg')}}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="{{route('detail.portofolio.front.index', $key->id)}}"><i class="fa fa-link"></i></a></li>
+                                        @if($key->logo_project != null)
+                                        <?php $photo261 = explode(".", $key->logo_project); ?>
+                                            <li><a href="{{url('images')}}/{{$photo261[0]}}_261x269.{{$photo261[1]}}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                        @else
+                                            <li><a href="{{ asset('theme/images/portfolio/1.jpg')}}" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>

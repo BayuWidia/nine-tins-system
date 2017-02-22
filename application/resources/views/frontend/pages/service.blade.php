@@ -32,7 +32,7 @@
                     <?php $photo575 = explode(".", $key->url_tentang); ?>
                         <img src="{{url('images')}}/{{$photo575[0]}}_495x298.{{$photo575[1]}}" class="img-responsive" alt="">
                     @else
-                        <img src="{{ asset('theme/images/aboutus/.png')}}" class="img-responsive" alt="">
+                        <img src="{{ asset('theme/images/aboutus/1.png')}}" class="img-responsive" alt="">
                     @endif
                 </div>
                 <h2>Why Choose Us?</h2>

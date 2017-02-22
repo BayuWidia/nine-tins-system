@@ -49,9 +49,9 @@ class ProjectController extends Controller
       $photo552_2 = $photo2[0]."_552x577.".$photo2[1];
       
       Image::make($logoProject)->fit(472,270)->save('images/'. $photo_name_logo);
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+      Image::make($logoProject)->fit(130,50)->save('images/'. $photo130_2);
+      Image::make($logoProject)->fit(261,269)->save('images/'. $photo261_2);
+      Image::make($logoProject)->fit(552,577)->save('images/'. $photo552_2);
 
         $set = new Project;
         $set->id_user = Auth::user()->id;
@@ -116,9 +116,9 @@ class ProjectController extends Controller
       
       Image::make($logoProject)->fit(472,270)->save('images/'. $photo_name_logo);
 
-      Image::make($file)->fit(130,50)->save('images/'. $photo130_2);
-      Image::make($file)->fit(261,269)->save('images/'. $photo261_2);
-      Image::make($file)->fit(552,577)->save('images/'. $photo552_2);
+      Image::make($logoProject)->fit(130,50)->save('images/'. $photo130_2);
+      Image::make($logoProject)->fit(261,269)->save('images/'. $photo261_2);
+      Image::make($logoProject)->fit(552,577)->save('images/'. $photo552_2);
 
         $set = Project::find($request->id);
         $set->id_user = Auth::user()->id;

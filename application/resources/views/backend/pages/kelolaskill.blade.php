@@ -269,6 +269,7 @@
           url: "{{url('/')}}/admin/bind-skill/"+a,
           dataType: 'json',
           success: function(data){
+           
             var id = data.id;
             var nama_skill = data.nama_keahlian;
             var keterangan_skill = data.keterangan_keahlian;

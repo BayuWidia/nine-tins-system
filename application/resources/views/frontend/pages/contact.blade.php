@@ -29,20 +29,51 @@
             <div class="contact-info">
                 <h2>Contacts</h2>
                 <address>
-                E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br> 
-                Phone: +1 (123) 456 7890 <br> 
-                Fax: +1 (123) 456 7891 <br> 
+                E-mail: hello@9tins.com</a> <br> 
+                Phone: 0856-9137-9577 <br>
                 </address>
 
                 <h2>Address</h2>
                 <address>
-                Unit C2, St.Vincent's Trading Est., <br> 
-                Feeder Road, <br> 
-                Bristol, BS2 0UY <br> 
-                United Kingdom <br> 
+                Perumahan Neo Bintaro Blok i-2, Jl. Raya Japos, <br> 
+                Pondok Belimbing RT. 03/04, <br> 
+                Kelurahan Jurang Mangu Barat, <br> 
+                Kecamatan Pondok Aren Tanggerang Selatan 15223 <br> 
                 </address>
             </div>
         </div>
-    </section> <!--/#map-section-->        
+    </section> <!--/#map-section-->  
+
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email ">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                            </div>                        
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>      
   
     @stop  
