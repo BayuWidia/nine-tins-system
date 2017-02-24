@@ -1,8 +1,3 @@
-<style type="text/css">
-  #colortreemenulihref{
-      color: #000000;
-    }
-</style>
 <section class="sidebar">
   <!-- Sidebar user panel -->
   <div class="user-panel">
@@ -14,14 +9,14 @@
       @endif
     </div>
     <div class="pull-left info">
-      <p style="color:black">
+      <p>
         @if(Auth::user()->name=="")
           {{Auth::user()->email}}
         @else
           {{Auth::user()->name}}
         @endif
       </p>
-      <a href="#" style="color:black"><i class="fa fa-circle text-success"></i>
+      <a href="#"><i class="fa fa-circle text-success"></i>
         {{Auth::user()->email}}
       </a>
     </div>
@@ -40,12 +35,12 @@
   <ul class="sidebar-menu">
     <li class="header">MAIN NAVIGATION</li>
     <li>
-      <a href="{{url('backend/dashboard')}}" id="colortreemenulihref">
+      <a href="{{url('backend/dashboard')}}" >
         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
       </a>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-desktop"></i>
         <span>Profile 9 tins</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -56,7 +51,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-code-fork"></i>
         <span>Bagi Pengetahuan</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -67,7 +62,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-diamond"></i>
         <span>Manajemen Jabatan</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -77,7 +72,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-star"></i>
         <span>Manajemen Features</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -87,7 +82,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-wrench"></i>
         <span>Manajemen Services</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -97,7 +92,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-beer"></i>
         <span>Manajemen Skill</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -107,7 +102,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-black-tie"></i>
         <span>Manajemen About</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -120,7 +115,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-building-o"></i>
         <span>Manajemen Client</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -130,7 +125,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-briefcase"></i>
         <span>Manajemen Project</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -146,7 +141,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-commenting-o"></i>
         <span>Manajemen Testimonial</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -156,7 +151,7 @@
       </ul>
     </li>
       <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-graduation-cap"></i>
         <span>Manajemen Blockquote</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -166,7 +161,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-users"></i>
         <span>Manajemen Akun</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -176,7 +171,7 @@
       </ul>
     </li>
     <li class="treeview">
-      <a href="#" id="colortreemenulihref">
+      <a href="#" >
         <i class="fa fa-image"></i>
         <span>Galeri & Slider</span>
         <i class="fa fa-angle-left pull-right"></i>

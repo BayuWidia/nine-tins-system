@@ -62,7 +62,7 @@
         @endif
       method="post" style="margin-top:10px;" enctype="multipart/form-data">
         {{csrf_field()}}
-        <div class="box box-danger">
+        <div class="box box-primary">
           <div class="box-header">
             @if(isset($editclient))
               <h3 class="box-title">Form Edit Client</h3>

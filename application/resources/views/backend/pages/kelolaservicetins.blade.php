@@ -54,7 +54,7 @@
     <form class="form-horizontal" method="post" action="{{route('service.tins.store')}}" enctype="multipart/form-data">
       {{ csrf_field() }}
         <div class="col-md-12">
-          <div class="box box-success">
+          <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Form Deskripsi 9 Tins</h3>
               <div class="box-tools pull-right">

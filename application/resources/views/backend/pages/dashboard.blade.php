@@ -98,7 +98,7 @@
 
   <div class="row">
     <div class="col-md-8">
-      <div class="box box-danger">
+      <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-speakerphone"></i>
 
@@ -149,7 +149,7 @@
           </div>
     </div>
     <div class="col-md-4">
-      <div class="box box-danger">
+      <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Latest Members</h3>
 

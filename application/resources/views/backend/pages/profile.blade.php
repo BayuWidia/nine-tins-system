@@ -53,7 +53,7 @@
 
     <div class="col-md-3">
       <!-- Profile Image -->
-      <div class="box box-success">
+      <div class="box box-primary">
         <div class="box-body box-profile">
           <p class="text-muted text-center bg-green">{{$getuser->master_jabatan->nama_jabatan}}</p>
           @if($getuser->url_foto=="")

@@ -118,7 +118,7 @@
     <form class="form-horizontal" action="{{route('pengetahuan.kategori.store')}}" method="post">
       {{ csrf_field() }}
       <div class="col-md-4">
-        <div class="box box-success">
+        <div class="box box-primary">
           <div class="box-header with-border">
             <h3 class="box-title">Formulir Tambah Kategori Baru</h3>
           </div>
@@ -148,14 +148,14 @@
     </form>
 
     <div class="col-md-8">
-      <div class="box box-success">
+      <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">List Data Kategori Bagi Pengetahuan</h3>
         </div>
         <div class="box-body no-padding">
           <table class="table table-hover">
             <tbody>
-              <tr class="bg-green">
+              <tr class="bg-blue">
                 <th style="width:10px;">#</th>
                 <th>Nama Kategori</th>
                 <th>Keterangan</th>
