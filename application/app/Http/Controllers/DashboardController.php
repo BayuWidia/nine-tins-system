@@ -11,6 +11,8 @@ use App\Models\Berita;
 use App\Models\Client;
 use App\Models\Project;
 use App\Models\KategoriBerita;
+use App\Models\Pesan;
+
 use DB;
 
 class DashboardController extends Controller
@@ -18,12 +20,8 @@ class DashboardController extends Controller
 
   public function index()
   {
+    $getpesan = Pesan::where('flag_pesan', '0')->orderby('created_at', 'desc')->get();
     if (Auth::user()->level=="1") {
-      $beritaterbaru = DB::table('berita')
-                        ->join('users', 'berita.id_user', '=', 'users.id')
-                        ->select('*', 'berita.created_at', 'berita.updated_at')
-                        ->orderby('berita.created_at', 'desc')
-                        ->limit(5)->get();
       $users = DB::table('users')
                         ->select('*')
                         ->orderby('users.created_at', 'desc')
@@ -35,12 +33,6 @@ class DashboardController extends Controller
       $countclient = Client::all()->count();
 
     } else {
-      $beritaterbaru = DB::table('berita')
-                        ->join('users', 'berita.id_user', '=', 'users.id')
-                        ->select('*', 'berita.created_at', 'berita.updated_at')
-                        ->where('id_user', Auth::user()->id)
-                        ->orderby('berita.created_at', 'desc')
-                        ->limit(5)->get();
       $users = DB::table('users')
                         ->select('*')
                         ->orderby('users.created_at', 'desc')
@@ -57,7 +49,7 @@ class DashboardController extends Controller
       ->with('countproject', $countproject)
       ->with('countsudahterdaftar', $countsudahterdaftar)
       ->with('countclient', $countclient)
-      ->with('beritaterbaru', $beritaterbaru)
+      ->with('getpesan', $getpesan)
       ->with('users', $users);
   }
 }

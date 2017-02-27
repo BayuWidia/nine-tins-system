@@ -102,39 +102,22 @@
             <div class="box-header">
               <i class="ion ion-speakerphone"></i>
 
-              <h3 class="box-title">Berita Terbaru</h3>
+              <h3 class="box-title">Pesan Terbaru</h3>
             </div>
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
-              @if($beritaterbaru != null)
-                @foreach ($beritaterbaru as $key)
+              @if($getpesan != null)
+                @foreach ($getpesan as $key)
                 <div class="item">
-                  @if($key->url_foto == null)
                   <img class="img-bordered-sm img-responsive img-circle" src="{{ asset('/images/userdefault.png') }}" alt="User Avatar">
-                @else
-                  <img class="img-bordered-sm img-responsive img-circle" src="{{ asset('/images/'.$key->url_foto) }}" alt="{{$key->name}}">
-                @endif
-
                   <p class="message">
-                    <a href="{{route('berita.user', $key->id_user)}}" class="name">
                       <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($key->created_at)->format('H:i:s')}}</small>
                       <small class="text-muted pull-right"><i class="fa fa-calendar margin-r-5"></i> {{ \Carbon\Carbon::parse($key->created_at)->format('d-M-y')}}&nbsp;&nbsp;</small>
-                      {{$key->name}}
-                    </a>
-                    <?php echo substr(strip_tags($key->isi_berita), 0,300); ?>...
+                      {{$key->nama}}
                   </p>
                   <div class="attachment" style="border:1px solid #F39C12;">
-                    <h4>Isi Dumelan:</h4>
-
-                    <p class="filename">
-                      <?php echo substr(strip_tags($key->isi_dumel), 0,300) ; ?>...
-                    </p>
-                    <div class="pull-right">
-                      @if($key->flag_publish == 0)
-                        <span class="label label-danger">Belum Dipublish</span>
-                      @else
-                        <span class="label label-info">Sudah Dipublish</span>
-                      @endif
+                    <div class="pull-left">
+                       <?php echo substr(strip_tags($key->pesan), 0,300); ?>...
                     </div>
                   </div>
                 </div>
@@ -144,6 +127,9 @@
                     Data Berita terbaru tidak tersedia.
                   </h5>
               @endif
+              <div class="box-footer clearfix">
+                  <a href="{{url('admin/kelola-pesan')}}" class="btn btn-sm btn-info btn-flat pull-right">Lihat Semua Pesan</a>
+              </div>
               <!-- /.item -->
             </div>
           </div>

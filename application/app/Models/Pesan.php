@@ -18,8 +18,4 @@ class Pesan extends Authenticatable
 		return $this->hasMany('App\Models\User');
 	}
 
-	public function tanggapan()
-	{
-		return $this->hasMany('App\Models\Tanggapan');
-	}
 }

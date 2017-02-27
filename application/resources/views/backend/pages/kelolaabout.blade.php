@@ -124,7 +124,7 @@
                 <div class="modal-body">
                   <div class="col-md-14">
                     <label class="control-label">Nama About</label>
-                    <input type="text" name="nama_tentang" class="form-control">
+                    <input type="text" name="nama_tentang" class="form-control" value="{{ $getabout->nama_tentang}}">
                   </div>
                   <div class="col-md-14">
                     <label class="control-label">Gambar About</label>
@@ -133,12 +133,12 @@
                   <span style="color:red;">* Biarkan kosong jika tidak ingin diganti.</span>
                   <div class="col-md-14 {{ $errors->has('keterangan_tentang') ? 'has-error' : '' }}">
                     <label class="control-label" style="margin-bottom:10px;">Isikan About 9 Tins :</label>
-                    <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('keterangan_tentang')}}</textarea>
+                    <textarea class="textarea" rows="5" name="keterangan_tentang" placeholder="isi dengan deskripsi singkat dari website 9 Tins" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $getabout->keterangan_tentang}}</textarea>
                     <input type="hidden" name="id" value="{{ $getabout->id}}">
                   </div>
                 </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-flat">Simpan</button>
+                <button type="submit" class="btn btn-primary btn-flat">Simpan Perubahan</button>
               </div>
             </div>
         </form>

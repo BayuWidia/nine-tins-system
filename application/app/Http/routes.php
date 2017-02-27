@@ -150,8 +150,8 @@ Route::get('admin/bind-skill/{id}', 'SkillController@bind')->name('skill.bind');
 Route::get('admin/kelola-pesan', 'PesanController@index')->name('pesan.index');
 Route::post('admin/store-pesan', 'PesanController@store')->name('pesan.store');
 Route::get('admin/delete-pesan/{id}', 'PesanController@delete')->name('pesan.delete');
-Route::post('admin/edit-pesan', 'PesanController@edit')->name('pesan.edit');
-Route::get('admin/bind-pesan/{id}', 'PesanController@bind')->name('pesan.bind');
+Route::get('admin/edit-pesan/{id}', 'PesanController@edit')->name('pesan.edit');
+Route::post('admin/update-pesan', 'PesanController@update')->name('pesan.update');
 // =======================================================================================================================
 
 

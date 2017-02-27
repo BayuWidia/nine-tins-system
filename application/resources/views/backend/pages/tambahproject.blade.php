@@ -269,7 +269,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">Harga Project</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="harga_project"
+                  <input type="text" class="form-control" name="harga_project" onkeypress="return isNumber(event)"
                     @if(isset($editproject))
                       value="{{$editproject->harga_project}}"
                     @endif
@@ -326,6 +326,15 @@
 
         $('#tagsinput').tagsinput();
     })
+
+    function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+  }
   </script>
 
   <script language="javascript">

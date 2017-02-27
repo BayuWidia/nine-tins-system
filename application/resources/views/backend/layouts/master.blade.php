@@ -4,7 +4,7 @@
     @include('backend.includes.head')
     @yield('title')
   </head>
-  <body class="hold-transition skin-yellow">
+  <body class="hold-transition skin-yellow sidebar-mini">
     <div class="wrapper">
 
       <header class="main-header">

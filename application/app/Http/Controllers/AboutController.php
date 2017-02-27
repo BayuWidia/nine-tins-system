@@ -55,7 +55,6 @@ class AboutController extends Controller
   {
     // dd($request);
     $file = $request->file('url_tentang');
-    $photo_name = "";
     if($file!="") {
       $photo_name = time(). '.' . $file->getClientOriginalExtension();
 
@@ -65,13 +64,20 @@ class AboutController extends Controller
 
         Image::make($file)->save('images/'. $photo_name);
         Image::make($file)->fit(495,298)->save('images/'. $photo495);
-    } 
+
       $set = About::find($request->id);
       $set->nama_tentang = $request->nama_tentang;
       $set->keterangan_tentang = $request->keterangan_tentang;
       $set->flag_tentang = 1;
       $set->url_tentang = $photo_name;
       $set->save();
+    } else {
+      $set = About::find($request->id);
+      $set->nama_tentang = $request->nama_tentang;
+      $set->keterangan_tentang = $request->keterangan_tentang;
+      $set->flag_tentang = 1;
+      $set->save();
+    }
 
     return redirect()->route('about.index')->with('message', 'Berhasil mengubah konten about.');
   }

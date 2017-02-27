@@ -17,4 +17,10 @@ class Tanggapan extends Authenticatable
 	{
 		return $this->hasMany('App\Models\User');
 	}
+
+
+	public function pesan()
+	{
+		return $this->hasMany('App\Models\Pesan');
+	}
 }

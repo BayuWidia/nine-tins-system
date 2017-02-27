@@ -15,7 +15,7 @@
                         @if($getabout != null)
                             <p><?php echo substr($getabout->keterangan_tentang, 0, 300) ?>...</p>
                         @endif
-                        <a href="{{route('about.front.index')}}" class="btn btn-common">View More...</a>
+                        <a href="{{route('about.front.index')}}" class="btn btn-common">Lihat Selanjutnya...</a>
                     </div>
                     <img src="{{ asset('theme/images/home/slider/hill.png')}}" class="slider-hill" alt="slider image">
                     <img src="{{ asset('theme/images/home/slider/house.png')}}" class="slider-house" alt="slider image">
